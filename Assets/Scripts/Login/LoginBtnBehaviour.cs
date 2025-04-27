@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using EndoAshu.Chess.Client.State;
 using EndoAshu.Chess.User;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -66,7 +67,7 @@ public class LoginBtnBehaviour : MonoBehaviour {
         LoginResponse = new UnityTaskResult<LoginPacket.LoginStatus>();
         Task.Run(async() => {
             try {
-                var res = await ChessClientManager.Client.Login(inputID, inputPW, 5000);
+                var res = await (ChessClientManager.Client.State as GameLoginState)!.Login(inputID, inputPW, 5000);
                 LoginResponse?.SetResult(LoginPacket.LoginStatus.SUCCESS);
             } catch {
                 LoginResponse?.SetResult(LoginPacket.LoginStatus.TIMEOUT);

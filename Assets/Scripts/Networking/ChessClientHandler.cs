@@ -7,7 +7,7 @@ public class ChessClientHandler : MonoBehaviour {
     void Update()
     {
         var client = ChessClientManager.UnsafeClient;
-        if (client != null) {
+        if (client != null && client.Account != null) {
             if (DialogManager.Current != null && DialogManager.Current.UniqueId == DisconnDialog.UniqueId) {
                 DialogManager.Current = null;
             }
