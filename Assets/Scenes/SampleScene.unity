@@ -183,9 +183,10 @@ GameObject:
   - component: {fileID: 49088393}
   - component: {fileID: 47794089}
   - component: {fileID: 46663017}
-  m_Layer: 0
+  - component: {fileID: 49088394}
+  m_Layer: 6
   m_Name: White_Pawn_7
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -205,6 +206,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 823328299}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &49088394
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48929705}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
+  m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
 --- !u!4 &126362803
 Transform:
   m_ObjectHideFlags: 0
@@ -231,9 +253,10 @@ GameObject:
   - component: {fileID: 126362803}
   - component: {fileID: 129787027}
   - component: {fileID: 128788051}
-  m_Layer: 0
+  - component: {fileID: 129787028}
+  m_Layer: 6
   m_Name: White_Bishop_2
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -291,6 +314,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126859411}
   m_Mesh: {fileID: 4300000, guid: 3ebcae0daf8394e548da469833b04106, type: 3}
+--- !u!65 &129787028
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126859411}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0163953, y: 2.119665, z: 1.0163953}
+  m_Center: {x: -0.00000008940697, y: 1.026538, z: 0.00000047683716}
 --- !u!33 &138986074
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -355,9 +399,10 @@ GameObject:
   - component: {fileID: 142377594}
   - component: {fileID: 138986074}
   - component: {fileID: 140083354}
-  m_Layer: 0
+  - component: {fileID: 142377595}
+  m_Layer: 6
   m_Name: 'White_Pawn_2 '
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -377,6 +422,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 823328299}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &142377595
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142286426}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
+  m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
 --- !u!4 &159505462
 Transform:
   m_ObjectHideFlags: 0
@@ -576,9 +642,10 @@ GameObject:
   - component: {fileID: 257073828}
   - component: {fileID: 258400900}
   - component: {fileID: 259498052}
-  m_Layer: 0
+  - component: {fileID: 259498053}
+  m_Layer: 6
   m_Name: Black_Rook_1
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -636,6 +703,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &259498053
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257244804}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0163953, y: 1.617299, z: 1.0163953}
+  m_Center: {x: 0.00000032782555, y: 0.8086491, z: -0.00000047683716}
 --- !u!1 &261289684
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,9 +735,10 @@ GameObject:
   - component: {fileID: 261450484}
   - component: {fileID: 262220500}
   - component: {fileID: 263219220}
-  m_Layer: 0
+  - component: {fileID: 263219221}
+  m_Layer: 6
   m_Name: Black_Pawn_8
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -722,6 +811,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &263219221
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261289684}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
+  m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
 --- !u!23 &302236309
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -786,9 +896,10 @@ GameObject:
   - component: {fileID: 303354444}
   - component: {fileID: 304124524}
   - component: {fileID: 305254572}
-  m_Layer: 0
+  - component: {fileID: 305254573}
+  m_Layer: 6
   m_Name: Black_Knight_1
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -827,9 +938,10 @@ GameObject:
   - component: {fileID: 304529525}
   - component: {fileID: 303202389}
   - component: {fileID: 302236309}
-  m_Layer: 0
+  - component: {fileID: 304529526}
+  m_Layer: 6
   m_Name: White_Pawn_1
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -849,6 +961,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 823328299}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &304529526
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304176213}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
+  m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
 --- !u!23 &305254572
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -894,6 +1027,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &305254573
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303255148}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0220126, y: 1.6987714, z: 0.8822419}
+  m_Center: {x: 0.06988546, y: 0.8493853, z: -0.00000041723263}
 --- !u!4 &310437466
 Transform:
   m_ObjectHideFlags: 0
@@ -920,9 +1074,10 @@ GameObject:
   - component: {fileID: 310437466}
   - component: {fileID: 313828986}
   - component: {fileID: 312861882}
-  m_Layer: 0
+  - component: {fileID: 313828987}
+  m_Layer: 6
   m_Name: White_Pawn_8
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -980,6 +1135,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310868602}
   m_Mesh: {fileID: 4300000, guid: dab6c0dea21994386a57acc588faa9e5, type: 3}
+--- !u!65 &313828987
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310868602}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
+  m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
 --- !u!1 &361335328
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,9 +1167,10 @@ GameObject:
   - component: {fileID: 361633280}
   - component: {fileID: 364533280}
   - component: {fileID: 363533536}
-  m_Layer: 0
+  - component: {fileID: 364533281}
+  m_Layer: 6
   m_Name: Black_King
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1066,6 +1243,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361335328}
   m_Mesh: {fileID: 4300000, guid: 9c7ba5185d28d475b902a82911b83e2c, type: 3}
+--- !u!65 &364533281
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361335328}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.078243, y: 2.9071734, z: 1.078243}
+  m_Center: {x: 0.00000008940697, y: 1.4358169, z: -0.0000009834766}
 --- !u!1 &368717519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,13 +1376,35 @@ GameObject:
   - component: {fileID: 377223965}
   - component: {fileID: 374324029}
   - component: {fileID: 375323133}
-  m_Layer: 0
+  - component: {fileID: 377251646}
+  m_Layer: 6
   m_Name: White_Knight_1
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &377251646
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377251645}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0220126, y: 1.6987714, z: 0.8822419}
+  m_Center: {x: 0.06988546, y: 0.8493853, z: -0.00000041723263}
 --- !u!1 &387708595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,9 +1555,10 @@ GameObject:
   - component: {fileID: 498010952}
   - component: {fileID: 496716648}
   - component: {fileID: 495585704}
-  m_Layer: 0
+  - component: {fileID: 498010953}
+  m_Layer: 6
   m_Name: Black_Knight_2
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1357,6 +1578,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1857305256}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &498010953
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497588072}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0220126, y: 1.6987714, z: 0.8822419}
+  m_Center: {x: 0.06988546, y: 0.8493853, z: -0.00000041723263}
 --- !u!1 &528711791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,9 +1610,10 @@ GameObject:
   - component: {fileID: 528751695}
   - component: {fileID: 531651695}
   - component: {fileID: 530652847}
-  m_Layer: 0
+  - component: {fileID: 531651696}
+  m_Layer: 6
   m_Name: Black_Pawn_1
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1443,6 +1686,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528711791}
   m_Mesh: {fileID: 4300000, guid: dab6c0dea21994386a57acc588faa9e5, type: 3}
+--- !u!65 &531651696
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528711791}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
+  m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
 --- !u!4 &597258130
 Transform:
   m_ObjectHideFlags: 0
@@ -1469,9 +1733,10 @@ GameObject:
   - component: {fileID: 597258130}
   - component: {fileID: 598552498}
   - component: {fileID: 599551346}
-  m_Layer: 0
+  - component: {fileID: 599551347}
+  m_Layer: 6
   m_Name: White_Bishop_1
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1529,6 +1794,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &599551347
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597619634}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0163953, y: 2.119665, z: 1.0163953}
+  m_Center: {x: -0.00000008940697, y: 1.026538, z: 0.00000047683716}
 --- !u!33 &638527218
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1608,13 +1894,35 @@ GameObject:
   - component: {fileID: 641427154}
   - component: {fileID: 638527218}
   - component: {fileID: 639525938}
-  m_Layer: 0
+  - component: {fileID: 641530611}
+  m_Layer: 6
   m_Name: White_Pawn_3
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &641530611
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641530610}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
+  m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2024,9 +2332,10 @@ GameObject:
   - component: {fileID: 900551755}
   - component: {fileID: 899224683}
   - component: {fileID: 898127531}
-  m_Layer: 0
+  - component: {fileID: 900551756}
+  m_Layer: 6
   m_Name: Black_Pawn_6
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2046,6 +2355,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1857305256}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &900551756
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900384875}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
+  m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
 --- !u!1 &931045772
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,8 +2401,8 @@ Transform:
   m_GameObject: {fileID: 931045772}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.861, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 498253721881481981}
@@ -2156,13 +2486,35 @@ GameObject:
   - component: {fileID: 939191530}
   - component: {fileID: 936291530}
   - component: {fileID: 937422346}
-  m_Layer: 0
+  - component: {fileID: 939356363}
+  m_Layer: 6
   m_Name: White__King
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &939356363
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939356362}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.078243, y: 2.9071734, z: 1.078243}
+  m_Center: {x: 0.00000008940697, y: 1.4358169, z: -0.0000009834766}
 --- !u!23 &961157855
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2227,9 +2579,10 @@ GameObject:
   - component: {fileID: 963582015}
   - component: {fileID: 962287647}
   - component: {fileID: 961157855}
-  m_Layer: 0
+  - component: {fileID: 963582016}
+  m_Layer: 6
   m_Name: Black_Pawn_3
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2341,6 +2694,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1857305256}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &963582016
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963150879}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
+  m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
 --- !u!1 &1018764564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2514,9 +2888,10 @@ GameObject:
   - component: {fileID: 1059333094}
   - component: {fileID: 1058038726}
   - component: {fileID: 1057038598}
-  m_Layer: 0
+  - component: {fileID: 1059333095}
+  m_Layer: 6
   m_Name: White_Pawn_6
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2536,6 +2911,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 823328299}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &1059333095
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059307462}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
+  m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
 --- !u!4 &1251608572
 Transform:
   m_ObjectHideFlags: 0
@@ -2562,9 +2958,10 @@ GameObject:
   - component: {fileID: 1251608572}
   - component: {fileID: 1252935644}
   - component: {fileID: 1254032668}
-  m_Layer: 0
+  - component: {fileID: 1254032669}
+  m_Layer: 6
   m_Name: White_Rook_2
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2622,6 +3019,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1254032669
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251843036}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0163953, y: 1.617299, z: 1.0163953}
+  m_Center: {x: 0.00000032782555, y: 0.8086491, z: -0.00000047683716}
 --- !u!33 &1313262992
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2701,13 +3119,35 @@ GameObject:
   - component: {fileID: 1316130224}
   - component: {fileID: 1313262992}
   - component: {fileID: 1314361168}
-  m_Layer: 0
+  - component: {fileID: 1316295057}
+  m_Layer: 6
   m_Name: White_Rook_1
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &1316295057
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316295056}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0163953, y: 1.617299, z: 1.0163953}
+  m_Center: {x: 0.00000032782555, y: 0.8086491, z: -0.00000047683716}
 --- !u!1 &1438439497
 GameObject:
   m_ObjectHideFlags: 0
@@ -2750,9 +3190,10 @@ GameObject:
   - component: {fileID: 1457378511}
   - component: {fileID: 1458148591}
   - component: {fileID: 1459148335}
-  m_Layer: 0
+  - component: {fileID: 1459148336}
+  m_Layer: 6
   m_Name: Black_Pawn_2
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2825,6 +3266,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1459148336
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457146095}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
+  m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
 --- !u!23 &1501723184
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2889,9 +3351,10 @@ GameObject:
   - component: {fileID: 1504147664}
   - component: {fileID: 1502820592}
   - component: {fileID: 1501723184}
-  m_Layer: 0
+  - component: {fileID: 1504147665}
+  m_Layer: 6
   m_Name: White_Pawn_5
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2911,6 +3374,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 823328299}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &1504147665
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503716592}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
+  m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
 --- !u!1 &1511677671
 GameObject:
   m_ObjectHideFlags: 0
@@ -2922,9 +3406,10 @@ GameObject:
   - component: {fileID: 1511899847}
   - component: {fileID: 1512669927}
   - component: {fileID: 1513668647}
-  m_Layer: 0
+  - component: {fileID: 1513668648}
+  m_Layer: 6
   m_Name: White_Knight_2
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2997,6 +3482,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1513668648
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511677671}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0220126, y: 1.6987714, z: 0.8822419}
+  m_Center: {x: 0.06988546, y: 0.8493853, z: -0.00000041723263}
 --- !u!23 &1518716727
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3076,13 +3582,35 @@ GameObject:
   - component: {fileID: 1520485847}
   - component: {fileID: 1519683063}
   - component: {fileID: 1518716727}
-  m_Layer: 0
+  - component: {fileID: 1520916984}
+  m_Layer: 6
   m_Name: Black_Bishop_2
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &1520916984
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520916983}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0163953, y: 2.119665, z: 1.0163953}
+  m_Center: {x: -0.00000008940697, y: 1.026538, z: 0.00000047683716}
 --- !u!23 &1523473301
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3162,13 +3690,35 @@ GameObject:
   - component: {fileID: 1525373301}
   - component: {fileID: 1524570453}
   - component: {fileID: 1523473301}
-  m_Layer: 0
+  - component: {fileID: 1525466454}
+  m_Layer: 6
   m_Name: Black_Rook_2
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &1525466454
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525466453}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0163953, y: 1.617299, z: 1.0163953}
+  m_Center: {x: 0.00000032782555, y: 0.8086491, z: -0.00000047683716}
 --- !u!33 &1589932743
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3248,13 +3798,35 @@ GameObject:
   - component: {fileID: 1592799975}
   - component: {fileID: 1589932743}
   - component: {fileID: 1591029767}
-  m_Layer: 0
+  - component: {fileID: 1593290440}
+  m_Layer: 6
   m_Name: Black_Bishop_1
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &1593290440
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593290439}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0163953, y: 2.119665, z: 1.0163953}
+  m_Center: {x: -0.00000008940697, y: 1.026538, z: 0.00000047683716}
 --- !u!4 &1686346965
 Transform:
   m_ObjectHideFlags: 0
@@ -3281,9 +3853,10 @@ GameObject:
   - component: {fileID: 1686346965}
   - component: {fileID: 1689771253}
   - component: {fileID: 1688641077}
-  m_Layer: 0
+  - component: {fileID: 1689771254}
+  m_Layer: 6
   m_Name: Black_Queen
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3397,9 +3970,10 @@ GameObject:
   - component: {fileID: 1689193380}
   - component: {fileID: 1687899012}
   - component: {fileID: 1686767940}
-  m_Layer: 0
+  - component: {fileID: 1689193381}
+  m_Layer: 6
   m_Name: White_Queen
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3419,6 +3993,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 823328299}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &1689193381
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688770436}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.078243, y: 2.407831, z: 1.078243}
+  m_Center: {x: 0.00000011920929, y: 1.2039155, z: 0.0000005066395}
 --- !u!33 &1689771253
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3427,6 +4022,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686372597}
   m_Mesh: {fileID: 4300000, guid: 4ed40abe3301f47969aa44350488c7d0, type: 3}
+--- !u!65 &1689771254
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686372597}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.078243, y: 2.407831, z: 1.078243}
+  m_Center: {x: 0.00000011920929, y: 1.2039155, z: 0.0000005066395}
 --- !u!33 &1694949633
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3506,13 +4122,35 @@ GameObject:
   - component: {fileID: 1697816865}
   - component: {fileID: 1694949633}
   - component: {fileID: 1696048065}
-  m_Layer: 0
+  - component: {fileID: 1697987842}
+  m_Layer: 6
   m_Name: Black_Pawn_7
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &1697987842
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697987841}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
+  m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
 --- !u!23 &1720670675
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3712,9 +4350,10 @@ GameObject:
   - component: {fileID: 1841463305}
   - component: {fileID: 1844887593}
   - component: {fileID: 1843888873}
-  m_Layer: 0
+  - component: {fileID: 1844887594}
+  m_Layer: 6
   m_Name: Black_Pawn_5
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3772,6 +4411,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841634345}
   m_Mesh: {fileID: 4300000, guid: dab6c0dea21994386a57acc588faa9e5, type: 3}
+--- !u!65 &1844887594
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841634345}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
+  m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
 --- !u!1 &1857305255
 GameObject:
   m_ObjectHideFlags: 0
@@ -3830,9 +4490,10 @@ GameObject:
   - component: {fileID: 2043038997}
   - component: {fileID: 2045906229}
   - component: {fileID: 2044940277}
-  m_Layer: 0
+  - component: {fileID: 2045906230}
+  m_Layer: 6
   m_Name: Black_Pawn_4
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3905,6 +4566,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2042745141}
   m_Mesh: {fileID: 4300000, guid: dab6c0dea21994386a57acc588faa9e5, type: 3}
+--- !u!65 &2045906230
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042745141}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
+  m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
 --- !u!1 &2087042795
 GameObject:
   m_ObjectHideFlags: 0
@@ -4027,13 +4709,35 @@ GameObject:
   - component: {fileID: 2095197970}
   - component: {fileID: 2094427954}
   - component: {fileID: 2093428210}
-  m_Layer: 0
+  - component: {fileID: 2095428403}
+  m_Layer: 6
   m_Name: White_Pawn_4
-  m_TagString: Untagged
+  m_TagString: ChessPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &2095428403
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095428402}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
+  m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
 --- !u!1 &1057649962671997
 GameObject:
   m_ObjectHideFlags: 0
@@ -5790,6 +6494,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  holdPoint: {fileID: 931045773}
+  heldPice: {fileID: 0}
+  rayDistance: 1
 --- !u!114 &498253721881481983
 MonoBehaviour:
   m_ObjectHideFlags: 0
