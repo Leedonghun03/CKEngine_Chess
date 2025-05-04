@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     {
         HandleMovement();
         HandleInteraction();
+
+        Debug.DrawRay(transform.position + Vector3.up, transform.forward, Color.red);
     }
 
     private void HandleMovement()
