@@ -200,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 48929705}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 1.311167, y: 0, z: 1.25}
+  m_LocalPosition: {x: 1.25, y: 0, z: 1.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -416,7 +416,7 @@ Transform:
   m_GameObject: {fileID: 142286426}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 7.5568986, y: 0, z: 1.25}
+  m_LocalPosition: {x: 7.5, y: 0, z: 1.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -736,6 +736,7 @@ GameObject:
   - component: {fileID: 262220500}
   - component: {fileID: 263219220}
   - component: {fileID: 263219221}
+  - component: {fileID: 263219222}
   m_Layer: 6
   m_Name: Black_Pawn_8
   m_TagString: ChessPiece
@@ -832,6 +833,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
   m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
+--- !u!114 &263219222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261289684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 1
+  boardPosition: {x: 0, y: 0}
 --- !u!23 &302236309
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -955,7 +970,7 @@ Transform:
   m_GameObject: {fileID: 304176213}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 8.806041, y: 0, z: 1.25}
+  m_LocalPosition: {x: 8.75, y: 0, z: 1.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1057,7 +1072,7 @@ Transform:
   m_GameObject: {fileID: 310868602}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.062018394, y: 0, z: 1.25}
+  m_LocalPosition: {x: 0, y: 0, z: 1.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1273,6 +1288,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 368717520}
+  - component: {fileID: 368717521}
+  - component: {fileID: 368717522}
   m_Layer: 0
   m_Name: Chessboard
   m_TagString: Untagged
@@ -1299,6 +1316,31 @@ Transform:
   - {fileID: 823328299}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &368717521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368717519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd678325390b8f4c984fc14d7d50fb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &368717522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368717519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b94d3dc4645aac043a6585ade5469050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicatorPrefab: {fileID: 528711791}
 --- !u!33 &374324029
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1613,6 +1655,7 @@ GameObject:
   - component: {fileID: 531651695}
   - component: {fileID: 530652847}
   - component: {fileID: 531651696}
+  - component: {fileID: 531651697}
   m_Layer: 6
   m_Name: Black_Pawn_1
   m_TagString: ChessPiece
@@ -1709,6 +1752,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
   m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
+--- !u!114 &531651697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528711791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 1
+  boardPosition: {x: 0, y: 0}
 --- !u!4 &597258130
 Transform:
   m_ObjectHideFlags: 0
@@ -1879,7 +1936,7 @@ Transform:
   m_GameObject: {fileID: 641530610}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 6.307756, y: 0, z: 1.25}
+  m_LocalPosition: {x: 6.25, y: 0, z: 1.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2335,6 +2392,7 @@ GameObject:
   - component: {fileID: 899224683}
   - component: {fileID: 898127531}
   - component: {fileID: 900551756}
+  - component: {fileID: 900551757}
   m_Layer: 6
   m_Name: Black_Pawn_6
   m_TagString: ChessPiece
@@ -2378,6 +2436,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
   m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
+--- !u!114 &900551757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900384875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 1
+  boardPosition: {x: 0, y: 0}
 --- !u!1 &931045772
 GameObject:
   m_ObjectHideFlags: 0
@@ -2582,6 +2654,7 @@ GameObject:
   - component: {fileID: 962287647}
   - component: {fileID: 961157855}
   - component: {fileID: 963582016}
+  - component: {fileID: 963582017}
   m_Layer: 6
   m_Name: Black_Pawn_3
   m_TagString: ChessPiece
@@ -2717,6 +2790,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
   m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
+--- !u!114 &963582017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963150879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 1
+  boardPosition: {x: 0, y: 0}
 --- !u!1 &1018764564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2907,7 +2994,7 @@ Transform:
   m_GameObject: {fileID: 1059307462}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 2.5603085, y: 0, z: 1.25}
+  m_LocalPosition: {x: 2.5, y: 0, z: 1.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3150,6 +3237,51 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0163953, y: 1.617299, z: 1.0163953}
   m_Center: {x: 0.00000032782555, y: 0.8086491, z: -0.00000047683716}
+--- !u!1 &1356157561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1356157562}
+  - component: {fileID: 1356157563}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1356157562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356157561}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1356157563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356157561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78404537e68649a4f87fc0a16c26d3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 368717521}
 --- !u!1 &1438439497
 GameObject:
   m_ObjectHideFlags: 0
@@ -3176,7 +3308,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8406845054000770103}
@@ -3193,6 +3325,7 @@ GameObject:
   - component: {fileID: 1458148591}
   - component: {fileID: 1459148335}
   - component: {fileID: 1459148336}
+  - component: {fileID: 1459148337}
   m_Layer: 6
   m_Name: Black_Pawn_2
   m_TagString: ChessPiece
@@ -3289,6 +3422,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
   m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
+--- !u!114 &1459148337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457146095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 1
+  boardPosition: {x: 0, y: 0}
 --- !u!23 &1501723184
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3370,7 +3517,7 @@ Transform:
   m_GameObject: {fileID: 1503716592}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 3.8094645, y: 0, z: 1.25}
+  m_LocalPosition: {x: 3.75, y: 0, z: 1.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4125,6 +4272,7 @@ GameObject:
   - component: {fileID: 1694949633}
   - component: {fileID: 1696048065}
   - component: {fileID: 1697987842}
+  - component: {fileID: 1697987843}
   m_Layer: 6
   m_Name: Black_Pawn_7
   m_TagString: ChessPiece
@@ -4153,6 +4301,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
   m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
+--- !u!114 &1697987843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697987841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 1
+  boardPosition: {x: 0, y: 0}
 --- !u!23 &1720670675
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4353,6 +4515,7 @@ GameObject:
   - component: {fileID: 1844887593}
   - component: {fileID: 1843888873}
   - component: {fileID: 1844887594}
+  - component: {fileID: 1844887595}
   m_Layer: 6
   m_Name: Black_Pawn_5
   m_TagString: ChessPiece
@@ -4434,6 +4597,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
   m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
+--- !u!114 &1844887595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841634345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 1
+  boardPosition: {x: 0, y: 0}
 --- !u!1 &1857305255
 GameObject:
   m_ObjectHideFlags: 0
@@ -4493,6 +4670,7 @@ GameObject:
   - component: {fileID: 2045906229}
   - component: {fileID: 2044940277}
   - component: {fileID: 2045906230}
+  - component: {fileID: 2045906231}
   m_Layer: 6
   m_Name: Black_Pawn_4
   m_TagString: ChessPiece
@@ -4589,6 +4767,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
   m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
+--- !u!114 &2045906231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042745141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 1
+  boardPosition: {x: 0, y: 0}
 --- !u!1 &2087042795
 GameObject:
   m_ObjectHideFlags: 0
@@ -4694,7 +4886,7 @@ Transform:
   m_GameObject: {fileID: 2095428402}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 5.0586047, y: 0, z: 1.25}
+  m_LocalPosition: {x: 5, y: 0, z: 1.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6246,7 +6438,7 @@ Transform:
   m_GameObject: {fileID: 498253721744547669}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.84, y: 0, z: 0.031479135}
+  m_LocalPosition: {x: 5.84, y: 0, z: -1.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6473,7 +6665,7 @@ Transform:
   m_GameObject: {fileID: 498253721881481926}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: 5}
+  m_LocalPosition: {x: 3, y: 0, z: 2.41}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6497,7 +6689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   holdPoint: {fileID: 931045773}
-  heldPice: {fileID: 0}
+  board: {fileID: 368717521}
   rayDistance: 0.5
 --- !u!114 &498253721881481983
 MonoBehaviour:
@@ -8483,7 +8675,7 @@ Transform:
   m_GameObject: {fileID: 8406845054000770106}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 6, y: 0, z: 5}
+  m_LocalPosition: {x: 6, y: 0, z: 6.62}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8883,7 +9075,7 @@ Transform:
   m_GameObject: {fileID: 8406845054826641121}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 4.58}
+  m_LocalPosition: {x: -1.66, y: 0, z: 4.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9392,3 +9584,4 @@ SceneRoots:
   - {fileID: 8406845054000770103}
   - {fileID: 368717520}
   - {fileID: 2087042796}
+  - {fileID: 1356157562}

@@ -1,16 +1,7 @@
 using UnityEngine;
 
-public class ILiftable : MonoBehaviour
+public interface ILiftAble
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void LiftToParent(Transform parent);
+    void PlaceAt(Vector3 worldPosition);
 }

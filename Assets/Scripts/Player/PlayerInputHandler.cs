@@ -4,8 +4,8 @@ using UnityEngine.Serialization;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    InputAction MoveAction;
-    InputAction PickUpAction;
+    InputAction moveAction;
+    InputAction pickUpAction;
 
     [FormerlySerializedAs("MoveVector")]
     public Vector2 moveVector;
@@ -14,46 +14,46 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Start()
     {
-        MoveAction = InputSystem.actions.FindAction("Move");
-        MoveAction.performed += OnMovePerformed;
-        MoveAction.canceled += OnMoveCanceled;
+        moveAction = InputSystem.actions.FindAction("Move");
+        moveAction.performed += OnMovePerformed;
+        moveAction.canceled += OnMoveCanceled;
 
-        PickUpAction = InputSystem.actions.FindAction("PickUp");
-        PickUpAction.started += OnPickStarted;
-        PickUpAction.canceled += OnPickCanceled;
+        pickUpAction = InputSystem.actions.FindAction("PickUp");
+        pickUpAction.performed += OnPickPerformed;
+        pickUpAction.canceled += OnPickCanceled;
 
-        MoveAction.Enable();
-        PickUpAction.Enable();
+        moveAction.Enable();
+        pickUpAction.Enable();
     }
 
     public void OnMovePerformed(InputAction.CallbackContext context)
     {
         moveVector = context.ReadValue<Vector2>();
-        Debug.Log("Move Input : " + moveVector);
     }
 
     public void OnMoveCanceled(InputAction.CallbackContext context)
     {
         moveVector = Vector2.zero;
-        Debug.Log("Move Canceled - Stopping");
     }
 
-    public void OnPickStarted(InputAction.CallbackContext context)
+    public void OnPickPerformed(InputAction.CallbackContext context)
     {
         pickTriggerd = true;
+        Debug.Log("Pick Input : " + context.phase);
     }
 
     public void OnPickCanceled(InputAction.CallbackContext context)
     {
         pickTriggerd = false;
+        Debug.Log("Pick Input : " + context.phase);
     }
 
     private void OnDestroy()
     {
-        MoveAction.performed -= OnMovePerformed;
-        MoveAction.canceled -= OnMoveCanceled;
+        moveAction.performed -= OnMovePerformed;
+        moveAction.canceled -= OnMoveCanceled;
 
-        PickUpAction.started -= OnPickStarted;
-        PickUpAction.canceled -= OnPickCanceled;
+        pickUpAction.started -= OnPickPerformed;
+        pickUpAction.canceled -= OnPickCanceled;
     }
 }
