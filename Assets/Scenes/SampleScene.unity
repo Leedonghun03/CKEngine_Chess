@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 47794089}
   - component: {fileID: 46663017}
   - component: {fileID: 49088394}
+  - component: {fileID: 49088395}
   m_Layer: 6
   m_Name: White_Pawn_7
   m_TagString: ChessPiece
@@ -227,6 +228,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
   m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
+--- !u!114 &49088395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48929705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  boardPosition: {x: 0, y: 0}
+  hasMoved: 0
 --- !u!4 &126362803
 Transform:
   m_ObjectHideFlags: 0
@@ -400,6 +416,7 @@ GameObject:
   - component: {fileID: 138986074}
   - component: {fileID: 140083354}
   - component: {fileID: 142377595}
+  - component: {fileID: 142377596}
   m_Layer: 6
   m_Name: 'White_Pawn_2 '
   m_TagString: ChessPiece
@@ -443,6 +460,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
   m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
+--- !u!114 &142377596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142286426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  boardPosition: {x: 0, y: 0}
+  hasMoved: 0
 --- !u!4 &159505462
 Transform:
   m_ObjectHideFlags: 0
@@ -847,6 +879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  hasMoved: 0
 --- !u!23 &302236309
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -954,6 +987,7 @@ GameObject:
   - component: {fileID: 303202389}
   - component: {fileID: 302236309}
   - component: {fileID: 304529526}
+  - component: {fileID: 304529527}
   m_Layer: 6
   m_Name: White_Pawn_1
   m_TagString: ChessPiece
@@ -997,6 +1031,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
   m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
+--- !u!114 &304529527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304176213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  boardPosition: {x: 0, y: 0}
+  hasMoved: 0
 --- !u!23 &305254572
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1090,6 +1139,7 @@ GameObject:
   - component: {fileID: 313828986}
   - component: {fileID: 312861882}
   - component: {fileID: 313828987}
+  - component: {fileID: 313828988}
   m_Layer: 6
   m_Name: White_Pawn_8
   m_TagString: ChessPiece
@@ -1171,6 +1221,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
   m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
+--- !u!114 &313828988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310868602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  boardPosition: {x: 0, y: 0}
+  hasMoved: 0
 --- !u!1 &361335328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,7 +1354,6 @@ GameObject:
   m_Component:
   - component: {fileID: 368717520}
   - component: {fileID: 368717521}
-  - component: {fileID: 368717522}
   m_Layer: 0
   m_Name: Chessboard
   m_TagString: Untagged
@@ -1328,19 +1392,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd678325390b8f4c984fc14d7d50fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &368717522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368717519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b94d3dc4645aac043a6585ade5469050, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  indicatorPrefab: {fileID: 528711791}
 --- !u!33 &374324029
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1766,6 +1817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  hasMoved: 0
 --- !u!4 &597258130
 Transform:
   m_ObjectHideFlags: 0
@@ -1954,6 +2006,7 @@ GameObject:
   - component: {fileID: 638527218}
   - component: {fileID: 639525938}
   - component: {fileID: 641530611}
+  - component: {fileID: 641530612}
   m_Layer: 6
   m_Name: White_Pawn_3
   m_TagString: ChessPiece
@@ -1982,6 +2035,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
   m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
+--- !u!114 &641530612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641530610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  boardPosition: {x: 0, y: 0}
+  hasMoved: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2450,6 +2518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  hasMoved: 0
 --- !u!1 &931045772
 GameObject:
   m_ObjectHideFlags: 0
@@ -2804,6 +2873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  hasMoved: 0
 --- !u!1 &1018764564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2978,6 +3048,7 @@ GameObject:
   - component: {fileID: 1058038726}
   - component: {fileID: 1057038598}
   - component: {fileID: 1059333095}
+  - component: {fileID: 1059333096}
   m_Layer: 6
   m_Name: White_Pawn_6
   m_TagString: ChessPiece
@@ -3021,6 +3092,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
   m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
+--- !u!114 &1059333096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059307462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  boardPosition: {x: 0, y: 0}
+  hasMoved: 0
 --- !u!4 &1251608572
 Transform:
   m_ObjectHideFlags: 0
@@ -3436,6 +3522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  hasMoved: 0
 --- !u!23 &1501723184
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3501,6 +3588,7 @@ GameObject:
   - component: {fileID: 1502820592}
   - component: {fileID: 1501723184}
   - component: {fileID: 1504147665}
+  - component: {fileID: 1504147666}
   m_Layer: 6
   m_Name: White_Pawn_5
   m_TagString: ChessPiece
@@ -3544,6 +3632,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
   m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
+--- !u!114 &1504147666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503716592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  boardPosition: {x: 0, y: 0}
+  hasMoved: 0
 --- !u!1 &1511677671
 GameObject:
   m_ObjectHideFlags: 0
@@ -4315,6 +4418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  hasMoved: 0
 --- !u!23 &1720670675
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4611,6 +4715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  hasMoved: 0
 --- !u!1 &1857305255
 GameObject:
   m_ObjectHideFlags: 0
@@ -4781,6 +4886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  hasMoved: 0
 --- !u!1 &2087042795
 GameObject:
   m_ObjectHideFlags: 0
@@ -4904,6 +5010,7 @@ GameObject:
   - component: {fileID: 2094427954}
   - component: {fileID: 2093428210}
   - component: {fileID: 2095428403}
+  - component: {fileID: 2095428404}
   m_Layer: 6
   m_Name: White_Pawn_4
   m_TagString: ChessPiece
@@ -4932,6 +5039,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.79388, y: 1.3423591, z: 0.79388}
   m_Center: {x: -0.00000074505806, y: 0.6580957, z: -0.00000074505806}
+--- !u!114 &2095428404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095428402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  boardPosition: {x: 0, y: 0}
+  hasMoved: 0
 --- !u!1 &1057649962671997
 GameObject:
   m_ObjectHideFlags: 0

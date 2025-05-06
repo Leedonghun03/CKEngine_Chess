@@ -1,34 +1,39 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.Serialization;
 
-public abstract class Pieces : MonoBehaviour, ILiftAble
+public enum TeamColor
+{
+    White,
+    Black
+}
+
+public class Pieces : MonoBehaviour, ILiftAble
 {
     public TeamColor team;
     public Vector2Int boardPosition;
 
-    public abstract List<Vector2Int> GetAvailableMoves(Board board);
-    
-    public bool TryMoveTo(Vector2Int targetPos, Board board)
+    protected virtual List<Vector2Int> GetAvailableMoves(Board board) { return null; }
+
+    public virtual bool TryMoveTo(Vector2Int targetPos, Board board)
     {
-        // 1) 유효 범위 & 합법 위치 검사
+        // 범위 검사
         if (!board.IsInside(targetPos))
         {
             return false;
         }
         
+        // GetAvailableMoves 함수로 이동 합법성 검사
         List<Vector2Int> legal = GetAvailableMoves(board);
         if (!legal.Contains(targetPos))
         {
             return false;
         }
 
-        // 2) 보드 논리 갱신
+        // 보드 논리 갱신
         board.SetPiece(boardPosition, null);
         board.SetPiece(targetPos, this);
-        boardPosition = targetPos;
 
-        // 3) 월드 위치로 스냅
+        // 월드 위치로 스냅
         Vector3 worldPos = board.GridToWorldPosition(targetPos);
         PlaceAt(worldPos);
 

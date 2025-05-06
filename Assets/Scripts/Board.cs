@@ -5,8 +5,8 @@ public class Board : MonoBehaviour
     // 월드 크기 조정 값
     private float cellWorldSize = 1.25f;
     
-    private const int GridSize = 8;
-    private Pieces[,] grid = new Pieces [GridSize, GridSize];
+    private const int gridSize = 8;
+    private Pieces[,] grid = new Pieces [gridSize, gridSize];
     
     // 월드 공간 좌표를 그리드 인덱스로 변환
     public Vector2Int WorldToGridPosition(Vector3 worldPos)

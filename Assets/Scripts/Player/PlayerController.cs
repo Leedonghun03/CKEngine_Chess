@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 [RequireComponent(typeof(PlayerInputHandler))]
 public class PlayerController : MonoBehaviour
@@ -8,6 +6,7 @@ public class PlayerController : MonoBehaviour
     private PlayerInputHandler input;
     [Header("이동 속도")]
     public float moveSpeed = 5.0f;
+    public float turnSpeed = 15.0f;
 
     [Header("잡기, 놓기 설정")]
     public Transform holdPoint;         // 플레이어 머리 위 빈 오브젝트
@@ -24,8 +23,6 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        
-        
         HandleMovement();
         HandleInteraction();
         
@@ -42,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
         if (moveDir.magnitude > 0.0f)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDir, transform.up), 10.0f * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDir, transform.up), turnSpeed * Time.deltaTime);
         }
     }
 

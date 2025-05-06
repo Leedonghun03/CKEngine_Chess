@@ -3,14 +3,15 @@ using System.Collections.Generic;
 
 public class Pawn : Pieces
 {
-    // 첫 이동 여부
-    private bool hasMoved = false;
+    [Header("첫 이동 여부")]
+    [SerializeField] private bool hasMoved = false;
     
-    public override List<Vector2Int> GetAvailableMoves(Board board)
-    {
-        var moves = new List<Vector2Int>();
-        int dir;
+    [Header("이동 방향")]
+    [SerializeField] private int dir;
 
+    public void Start()
+    {
+        // 팀에 따라서 이동 방향 정하기
         if (team == TeamColor.White)
         {
             dir = +1;
@@ -19,19 +20,27 @@ public class Pawn : Pieces
         {
             dir = -1;
         }
+    }
+
+    protected override List<Vector2Int> GetAvailableMoves(Board board)
+    {
+        List<Vector2Int> moves = new List<Vector2Int>();
         
-        Vector2Int one  = boardPosition + new Vector2Int(0, dir);
-        if (board.IsInside(one) && board.GetPiece(one) == null)
+        // 기본 이동
+        Vector2Int oneMove  = boardPosition + new Vector2Int(0, dir);
+        if (board.GetPiece(oneMove) == null)
         {
-            moves.Add(one);
+            moves.Add(oneMove);
         }
 
-        // 첫 이동 두 칸
-        Vector2Int two = boardPosition + new Vector2Int(0, dir * 2);
-        if (!hasMoved && board.IsInside(two) && board.GetPiece(one) == null && board.GetPiece(two) == null)
+        // 첫 이동시 2칸 이동
+        if (!hasMoved)
         {
-            moves.Add(two);
-            hasMoved = true;
+            Vector2Int twoMove = boardPosition + new Vector2Int(0, dir * 2);
+            if (board.GetPiece(twoMove) == null)
+            {
+                moves.Add(twoMove);
+            }
         }
 
         // 대각선 캡처
@@ -39,7 +48,7 @@ public class Pawn : Pieces
         {
             Vector2Int diag = boardPosition + new Vector2Int(dx, dir);
             Pieces target = board.GetPiece(diag);
-            if (board.IsInside(diag) && target != null && target.team != this.team)
+            if (target != null && target.team != this.team)
             {
                 moves.Add(diag);
             }
@@ -48,13 +57,11 @@ public class Pawn : Pieces
         return moves;
     }
 
-    public bool TryMoveTo(Vector2Int targetPos, Board board)
+    public override bool TryMoveTo(Vector2Int targetPos, Board board)
     {
         if (!base.TryMoveTo(targetPos, board))
-        {
             return false;
-        }
-        
+
         hasMoved = true;
         return true;
     }
