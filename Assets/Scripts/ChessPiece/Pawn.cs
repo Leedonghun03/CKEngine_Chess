@@ -22,13 +22,13 @@ public class Pawn : Pieces
         }
     }
 
-    public override List<Vector2Int> GetAvailableMoves(Board board)
+    public override List<Vector2Int> GetAvailableMoves(Board chessBoard)
     {
         List<Vector2Int> moves = new List<Vector2Int>();
         
         // 기본 이동
         Vector2Int oneMove  = boardPosition + new Vector2Int(0, dir);
-        if (board.GetPiece(oneMove) == null)
+        if (chessBoard.IsInside(oneMove) && chessBoard.GetPiece(oneMove) == null)
         {
             moves.Add(oneMove);
         }
@@ -37,7 +37,7 @@ public class Pawn : Pieces
         if (!hasMoved)
         {
             Vector2Int twoMove = boardPosition + new Vector2Int(0, dir * 2);
-            if (board.GetPiece(twoMove) == null)
+            if (chessBoard.GetPiece(twoMove) == null)
             {
                 moves.Add(twoMove);
             }
@@ -47,7 +47,7 @@ public class Pawn : Pieces
         foreach (int dx in new[]{ -1, 1 })
         {
             Vector2Int diag = boardPosition + new Vector2Int(dx, dir);
-            Pieces target = board.GetPiece(diag);
+            Pieces target = chessBoard.GetPiece(diag);
             if (target != null && target.team != this.team)
             {
                 moves.Add(diag);
@@ -57,12 +57,18 @@ public class Pawn : Pieces
         return moves;
     }
 
-    public override bool TryMoveTo(Vector2Int targetPos, Board board)
+    public override bool TryMoveTo(Vector2Int targetGridPosition)
     {
-        if (!base.TryMoveTo(targetPos, board))
+        if (!base.TryMoveTo(targetGridPosition))
+        {
             return false;
+        }
 
-        hasMoved = true;
+        if (!hasMoved)
+        {
+            hasMoved = true;
+        }
+        
         return true;
     }
 }

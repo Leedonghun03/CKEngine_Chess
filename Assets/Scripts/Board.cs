@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Board : MonoBehaviour
@@ -7,7 +8,7 @@ public class Board : MonoBehaviour
     
     private const int gridSize = 8;
     private Pieces[,] grid = new Pieces [gridSize, gridSize];
-    
+
     // 월드 공간 좌표를 그리드 인덱스로 변환
     public Vector2Int WorldToGridPosition(Vector3 worldPos)
     {
@@ -36,11 +37,12 @@ public class Board : MonoBehaviour
     // 유효한 그리드 위치에 있는 Pieces 객체를 반환
     public Pieces GetPiece(Vector2Int gridPos)
     {
+        // 보드 외부면 null 반환
         if (!IsInside(gridPos))
         {
             return null;
         }
-        
+
         return grid[gridPos.x, gridPos.y];
     }
 

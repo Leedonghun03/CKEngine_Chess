@@ -3,5 +3,5 @@ using UnityEngine;
 public interface ILiftAble
 {
     void LiftToParent(Transform parent);
-    void PlaceAt(Vector3 worldPosition);
+    bool TryPlaceOnBoard(Vector3 worldPosition);
 }

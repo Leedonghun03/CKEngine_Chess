@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 129787027}
   - component: {fileID: 128788051}
   - component: {fileID: 129787028}
+  - component: {fileID: 129787029}
   m_Layer: 6
   m_Name: White_Bishop_2
   m_TagString: ChessPiece
@@ -352,6 +353,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0163953, y: 2.119665, z: 1.0163953}
   m_Center: {x: -0.00000008940697, y: 1.026538, z: 0.00000047683716}
+--- !u!114 &129787029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126859411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15608791d11ad7e4bac1f7058287ed43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &138986074
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -677,6 +690,7 @@ GameObject:
   - component: {fileID: 258400900}
   - component: {fileID: 259498052}
   - component: {fileID: 259498053}
+  - component: {fileID: 259498054}
   m_Layer: 6
   m_Name: Black_Rook_1
   m_TagString: ChessPiece
@@ -758,6 +772,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0163953, y: 1.617299, z: 1.0163953}
   m_Center: {x: 0.00000032782555, y: 0.8086491, z: -0.00000047683716}
+--- !u!114 &259498054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257244804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58dc4f19aeb12bf45bd416bc5e6bfbae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &261289684
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,6 +974,7 @@ GameObject:
   - component: {fileID: 304124524}
   - component: {fileID: 305254572}
   - component: {fileID: 305254573}
+  - component: {fileID: 305254574}
   m_Layer: 6
   m_Name: Black_Knight_1
   m_TagString: ChessPiece
@@ -1116,6 +1143,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0220126, y: 1.6987714, z: 0.8822419}
   m_Center: {x: 0.06988546, y: 0.8493853, z: -0.00000041723263}
+--- !u!114 &305254574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303255148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c33169a58df4543b7fee74dce86e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &310437466
 Transform:
   m_ObjectHideFlags: 0
@@ -1253,6 +1292,7 @@ GameObject:
   - component: {fileID: 364533280}
   - component: {fileID: 363533536}
   - component: {fileID: 364533281}
+  - component: {fileID: 364533282}
   m_Layer: 6
   m_Name: Black_King
   m_TagString: ChessPiece
@@ -1349,6 +1389,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.078243, y: 2.9071734, z: 1.078243}
   m_Center: {x: 0.00000008940697, y: 1.4358169, z: -0.0000009834766}
+--- !u!114 &364533282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361335328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc231998b90385408dc2eb2c8cf7154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &368717519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,6 +1529,7 @@ GameObject:
   - component: {fileID: 374324029}
   - component: {fileID: 375323133}
   - component: {fileID: 377251646}
+  - component: {fileID: 377251647}
   m_Layer: 6
   m_Name: White_Knight_1
   m_TagString: ChessPiece
@@ -1505,6 +1558,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0220126, y: 1.6987714, z: 0.8822419}
   m_Center: {x: 0.06988546, y: 0.8493853, z: -0.00000041723263}
+--- !u!114 &377251647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377251645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c33169a58df4543b7fee74dce86e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &387708595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1656,6 +1721,7 @@ GameObject:
   - component: {fileID: 496716648}
   - component: {fileID: 495585704}
   - component: {fileID: 498010953}
+  - component: {fileID: 498010954}
   m_Layer: 6
   m_Name: Black_Knight_2
   m_TagString: ChessPiece
@@ -1699,6 +1765,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0220126, y: 1.6987714, z: 0.8822419}
   m_Center: {x: 0.06988546, y: 0.8493853, z: -0.00000041723263}
+--- !u!114 &498010954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497588072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c33169a58df4543b7fee74dce86e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &528711791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,7 +1806,7 @@ Transform:
   m_GameObject: {fileID: 528711791}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 7.5}
+  m_LocalPosition: {x: 0.01296711, y: 0, z: 7.505505}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1851,6 +1929,7 @@ GameObject:
   - component: {fileID: 598552498}
   - component: {fileID: 599551346}
   - component: {fileID: 599551347}
+  - component: {fileID: 599551348}
   m_Layer: 6
   m_Name: White_Bishop_1
   m_TagString: ChessPiece
@@ -1932,6 +2011,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0163953, y: 2.119665, z: 1.0163953}
   m_Center: {x: -0.00000008940697, y: 1.026538, z: 0.00000047683716}
+--- !u!114 &599551348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597619634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15608791d11ad7e4bac1f7058287ed43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &638527218
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2638,6 +2729,7 @@ GameObject:
   - component: {fileID: 936291530}
   - component: {fileID: 937422346}
   - component: {fileID: 939356363}
+  - component: {fileID: 939356364}
   m_Layer: 6
   m_Name: White__King
   m_TagString: ChessPiece
@@ -2666,6 +2758,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.078243, y: 2.9071734, z: 1.078243}
   m_Center: {x: 0.00000008940697, y: 1.4358169, z: -0.0000009834766}
+--- !u!114 &939356364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939356362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc231998b90385408dc2eb2c8cf7154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &961157855
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2840,7 +2944,7 @@ Transform:
   m_GameObject: {fileID: 963150879}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 0, z: 7.5}
+  m_LocalPosition: {x: 2.512967, y: 0, z: 7.505505}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3144,6 +3248,7 @@ GameObject:
   - component: {fileID: 1252935644}
   - component: {fileID: 1254032668}
   - component: {fileID: 1254032669}
+  - component: {fileID: 1254032670}
   m_Layer: 6
   m_Name: White_Rook_2
   m_TagString: ChessPiece
@@ -3225,6 +3330,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0163953, y: 1.617299, z: 1.0163953}
   m_Center: {x: 0.00000032782555, y: 0.8086491, z: -0.00000047683716}
+--- !u!114 &1254032670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251843036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58dc4f19aeb12bf45bd416bc5e6bfbae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &1313262992
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3305,6 +3422,7 @@ GameObject:
   - component: {fileID: 1313262992}
   - component: {fileID: 1314361168}
   - component: {fileID: 1316295057}
+  - component: {fileID: 1316295058}
   m_Layer: 6
   m_Name: White_Rook_1
   m_TagString: ChessPiece
@@ -3333,6 +3451,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0163953, y: 1.617299, z: 1.0163953}
   m_Center: {x: 0.00000032782555, y: 0.8086491, z: -0.00000047683716}
+--- !u!114 &1316295058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316295056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58dc4f19aeb12bf45bd416bc5e6bfbae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1356157561
 GameObject:
   m_ObjectHideFlags: 0
@@ -3671,6 +3801,7 @@ GameObject:
   - component: {fileID: 1512669927}
   - component: {fileID: 1513668647}
   - component: {fileID: 1513668648}
+  - component: {fileID: 1513668649}
   m_Layer: 6
   m_Name: White_Knight_2
   m_TagString: ChessPiece
@@ -3767,6 +3898,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0220126, y: 1.6987714, z: 0.8822419}
   m_Center: {x: 0.06988546, y: 0.8493853, z: -0.00000041723263}
+--- !u!114 &1513668649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511677671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c33169a58df4543b7fee74dce86e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1518716727
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3847,6 +3990,7 @@ GameObject:
   - component: {fileID: 1519683063}
   - component: {fileID: 1518716727}
   - component: {fileID: 1520916984}
+  - component: {fileID: 1520916985}
   m_Layer: 6
   m_Name: Black_Bishop_2
   m_TagString: ChessPiece
@@ -3875,6 +4019,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0163953, y: 2.119665, z: 1.0163953}
   m_Center: {x: -0.00000008940697, y: 1.026538, z: 0.00000047683716}
+--- !u!114 &1520916985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520916983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15608791d11ad7e4bac1f7058287ed43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1523473301
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3955,6 +4111,7 @@ GameObject:
   - component: {fileID: 1524570453}
   - component: {fileID: 1523473301}
   - component: {fileID: 1525466454}
+  - component: {fileID: 1525466455}
   m_Layer: 6
   m_Name: Black_Rook_2
   m_TagString: ChessPiece
@@ -3983,6 +4140,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0163953, y: 1.617299, z: 1.0163953}
   m_Center: {x: 0.00000032782555, y: 0.8086491, z: -0.00000047683716}
+--- !u!114 &1525466455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525466453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58dc4f19aeb12bf45bd416bc5e6bfbae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &1589932743
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4063,6 +4232,7 @@ GameObject:
   - component: {fileID: 1589932743}
   - component: {fileID: 1591029767}
   - component: {fileID: 1593290440}
+  - component: {fileID: 1593290441}
   m_Layer: 6
   m_Name: Black_Bishop_1
   m_TagString: ChessPiece
@@ -4091,6 +4261,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0163953, y: 2.119665, z: 1.0163953}
   m_Center: {x: -0.00000008940697, y: 1.026538, z: 0.00000047683716}
+--- !u!114 &1593290441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593290439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15608791d11ad7e4bac1f7058287ed43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1686346965
 Transform:
   m_ObjectHideFlags: 0
@@ -4118,6 +4300,7 @@ GameObject:
   - component: {fileID: 1689771253}
   - component: {fileID: 1688641077}
   - component: {fileID: 1689771254}
+  - component: {fileID: 1689771255}
   m_Layer: 6
   m_Name: Black_Queen
   m_TagString: ChessPiece
@@ -4235,6 +4418,7 @@ GameObject:
   - component: {fileID: 1687899012}
   - component: {fileID: 1686767940}
   - component: {fileID: 1689193381}
+  - component: {fileID: 1689193382}
   m_Layer: 6
   m_Name: White_Queen
   m_TagString: ChessPiece
@@ -4278,6 +4462,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.078243, y: 2.407831, z: 1.078243}
   m_Center: {x: 0.00000011920929, y: 1.2039155, z: 0.0000005066395}
+--- !u!114 &1689193382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688770436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21019defc0d811b468315ca74362a09a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &1689771253
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4307,6 +4503,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.078243, y: 2.407831, z: 1.078243}
   m_Center: {x: 0.00000011920929, y: 1.2039155, z: 0.0000005066395}
+--- !u!114 &1689771255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686372597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21019defc0d811b468315ca74362a09a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &1694949633
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6874,9 +7082,7 @@ MonoBehaviour:
   moveSpeed: 5
   turnSpeed: 15
   holdPoint: {fileID: 931045773}
-  board: {fileID: 368717521}
   rayDistance: 0.5
-  indicatorManager: {fileID: 1716181420}
 --- !u!114 &498253721881481983
 MonoBehaviour:
   m_ObjectHideFlags: 0

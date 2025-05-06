@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
         // 씬에 배치된 모든 Pieces를 찾아서 보드에 세팅하는 작업
         foreach (var piece in FindObjectsByType<Pieces>(FindObjectsSortMode.None))
         {
-            // 월드 위치 → 그리드 좌표
+            // 월드 위치 -> 그리드 좌표
             Vector2Int gridPos = board.WorldToGridPosition(piece.transform.position);
             // 보드에 등록하면 piece.boardPosition도 자동으로 세팅
             board.SetPiece(gridPos, piece);

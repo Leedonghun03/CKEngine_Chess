@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -10,45 +11,78 @@ public enum TeamColor
 public class Pieces : MonoBehaviour, ILiftAble
 {
     public TeamColor team;
+
     public Vector2Int boardPosition;
-
-    public virtual List<Vector2Int> GetAvailableMoves(Board board) { return null; }
-
-    public virtual bool TryMoveTo(Vector2Int targetPos, Board board)
+    private Board chessBoard;
+    
+    // 이동 표시 매니저
+    private MoveIndicatorManager indicatorManager;
+    
+    public void Awake()
     {
-        // 범위 검사
-        if (!board.IsInside(targetPos))
+        if (chessBoard == null)
+        {
+            chessBoard = GameObject.Find("Chessboard").GetComponent<Board>();
+        }
+
+        if (indicatorManager == null)
+        {
+            indicatorManager = GameObject.Find("MoveIndicatorManager").GetComponent<MoveIndicatorManager>();
+        }
+    }
+
+    public void LiftToParent(Transform parent)
+    {
+        transform.SetParent(parent, false);
+        transform.localPosition = Vector3.zero;
+        
+        List<Vector2Int> legalMoves = GetAvailableMoves(chessBoard);
+        indicatorManager.ShowMoveIndicator(chessBoard, legalMoves);
+    }
+
+    public bool TryPlaceOnBoard(Vector3 worldPosition)
+    {
+        // worldPosition에서 gridPosition으로 변경
+        Vector2Int gridPosition = chessBoard.WorldToGridPosition(worldPosition);
+        
+        if (TryMoveTo(gridPosition))
+        {
+            indicatorManager.ClearMoveIndicator();
+            return true;
+        }
+        
+        return false;
+    }
+    
+    public virtual List<Vector2Int> GetAvailableMoves(Board chessBoard) { return null; }
+    
+    public virtual bool TryMoveTo(Vector2Int targetGridPosition)
+    {
+        // 보드 범위 검사
+        if (!chessBoard.IsInside(targetGridPosition))
         {
             return false;
         }
         
         // GetAvailableMoves 함수로 이동 합법성 검사
-        List<Vector2Int> legal = GetAvailableMoves(board);
-        if (!legal.Contains(targetPos))
+        List<Vector2Int> legalMoves = GetAvailableMoves(chessBoard);
+        if (!legalMoves.Contains(targetGridPosition))
         {
             return false;
         }
 
+        // 있던 자리 null
+        chessBoard.SetPiece(boardPosition, null);
         // 보드 논리 갱신
-        board.SetPiece(boardPosition, null);
-        board.SetPiece(targetPos, this);
+        chessBoard.SetPiece(targetGridPosition, this);
 
-        // 월드 위치로 스냅
-        Vector3 worldPos = board.GridToWorldPosition(targetPos);
-        PlaceAt(worldPos);
-
-        return true;
-    }
-    
-    public void LiftToParent(Transform parent)
-    {
-        transform.SetParent(parent, false);
-        transform.localPosition = Vector3.zero;
-    }
-
-    public void PlaceAt(Vector3 worldPosition)
-    {
+        boardPosition = targetGridPosition;
+        
+        // 그리드 좌표에서 월드 좌표로 스냅
+        Vector3 snappedWorldPosition = chessBoard.GridToWorldPosition(targetGridPosition);
         transform.SetParent(null, false);
-        transform.position = worldPosition;
+        transform.position = snappedWorldPosition;
+        
+        return true;
     }
 }
