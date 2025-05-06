@@ -22,7 +22,7 @@ public class Pawn : Pieces
         }
     }
 
-    protected override List<Vector2Int> GetAvailableMoves(Board board)
+    public override List<Vector2Int> GetAvailableMoves(Board board)
     {
         List<Vector2Int> moves = new List<Vector2Int>();
         

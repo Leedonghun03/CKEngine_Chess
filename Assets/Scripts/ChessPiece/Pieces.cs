@@ -12,7 +12,7 @@ public class Pieces : MonoBehaviour, ILiftAble
     public TeamColor team;
     public Vector2Int boardPosition;
 
-    protected virtual List<Vector2Int> GetAvailableMoves(Board board) { return null; }
+    public virtual List<Vector2Int> GetAvailableMoves(Board board) { return null; }
 
     public virtual bool TryMoveTo(Vector2Int targetPos, Board board)
     {

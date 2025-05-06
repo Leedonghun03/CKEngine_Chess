@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerInputHandler))]
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public Transform holdPoint;         // 플레이어 머리 위 빈 오브젝트
     public Board board;
     public float rayDistance = 0.5f;
+    [SerializeField]private MoveIndicatorManager indicatorManager;
 
     private ILiftAble heldLiftAble;
     private Pieces heldPieceLogic;
@@ -53,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
         // 이미 들고 있다면 -> 놓기
         if (heldLiftAble != null)
-        { 
+        {
             PlaceHeldPiece();
         }
         else
@@ -86,6 +88,9 @@ public class PlayerController : MonoBehaviour
             
             heldLiftAble = liftAble;
             heldPieceLogic = piece;
+            
+            List<Vector2Int> legalMoves = heldPieceLogic.GetAvailableMoves(board);
+            indicatorManager.ShowMoveIndicator(board, legalMoves);
         }
     }
 
@@ -106,5 +111,7 @@ public class PlayerController : MonoBehaviour
 
         heldLiftAble = null;
         heldPieceLogic = null;
+        
+        indicatorManager.ClearMoveIndicator();
     }
 }
