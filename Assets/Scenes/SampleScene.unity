@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 0
+  team: 1
   boardPosition: {x: 0, y: 0}
   hasMoved: 0
   dir: 0
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 0
+  team: 1
   boardPosition: {x: 0, y: 0}
   hasMoved: 0
   dir: 0
@@ -905,7 +905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 1
+  team: 2
   boardPosition: {x: 0, y: 0}
   hasMoved: 0
   dir: 0
@@ -1073,7 +1073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 0
+  team: 1
   boardPosition: {x: 0, y: 0}
   hasMoved: 0
   dir: 0
@@ -1155,6 +1155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c33169a58df4543b7fee74dce86e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 2
+  boardPosition: {x: 0, y: 0}
 --- !u!4 &310437466
 Transform:
   m_ObjectHideFlags: 0
@@ -1276,7 +1278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 0
+  team: 1
   boardPosition: {x: 0, y: 0}
   hasMoved: 0
   dir: 0
@@ -1570,6 +1572,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c33169a58df4543b7fee74dce86e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 1
+  boardPosition: {x: 0, y: 0}
 --- !u!1 &387708595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1777,6 +1781,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c33169a58df4543b7fee74dce86e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 2
+  boardPosition: {x: 0, y: 0}
 --- !u!1 &528711791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,7 +1904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 1
+  team: 2
   boardPosition: {x: 0, y: 0}
   hasMoved: 0
   dir: 0
@@ -2144,7 +2150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 0
+  team: 1
   boardPosition: {x: 0, y: 0}
   hasMoved: 0
   dir: 0
@@ -2614,7 +2620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 1
+  team: 2
   boardPosition: {x: 0, y: 0}
   hasMoved: 0
   dir: 0
@@ -2983,7 +2989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 1
+  team: 2
   boardPosition: {x: 0, y: 0}
   hasMoved: 0
   dir: 0
@@ -3217,7 +3223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 0
+  team: 1
   boardPosition: {x: 0, y: 0}
   hasMoved: 0
   dir: 0
@@ -3660,7 +3666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 1
+  team: 2
   boardPosition: {x: 0, y: 0}
   hasMoved: 0
   dir: 0
@@ -3785,7 +3791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 0
+  team: 1
   boardPosition: {x: 0, y: 0}
   hasMoved: 0
   dir: 0
@@ -3910,6 +3916,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c33169a58df4543b7fee74dce86e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 1
+  boardPosition: {x: 0, y: 0}
 --- !u!23 &1518716727
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4636,7 +4644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 1
+  team: 2
   boardPosition: {x: 0, y: 0}
   hasMoved: 0
   dir: 0
@@ -4980,7 +4988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 1
+  team: 2
   boardPosition: {x: 0, y: 0}
   hasMoved: 0
   dir: 0
@@ -5152,7 +5160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 1
+  team: 2
   boardPosition: {x: 0, y: 0}
   hasMoved: 0
   dir: 0
@@ -5320,7 +5328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9790bba8732e44c90f7ccb3d2c32c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 0
+  team: 1
   boardPosition: {x: 0, y: 0}
   hasMoved: 0
   dir: 0

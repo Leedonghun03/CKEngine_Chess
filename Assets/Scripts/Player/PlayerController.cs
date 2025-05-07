@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
     // 체스말 들기
     void GrabPiece()
     {
-        // 들고 있는게 없으면 -> 레이로 탐색 후 집기
+        // 들고 있는게 없으면 레이로 탐색 후 집기
         Vector3 origin = transform.position + Vector3.up;
         Vector3 forward = transform.forward;
 

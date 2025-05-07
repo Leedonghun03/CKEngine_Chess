@@ -48,6 +48,8 @@ public class Pawn : Pieces
         {
             Vector2Int diag = boardPosition + new Vector2Int(dx, dir);
             Pieces target = chessBoard.GetPiece(diag);
+            
+            // 죽이거나 or 전투 진입
             if (target != null && target.team != this.team)
             {
                 moves.Add(diag);

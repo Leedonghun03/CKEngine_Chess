@@ -4,13 +4,14 @@ using System.Collections.Generic;
 
 public enum TeamColor
 {
+    NoTeam = 0,
     White,
     Black
 }
 
 public class Pieces : MonoBehaviour, ILiftAble
 {
-    public TeamColor team;
+    public TeamColor team = TeamColor.NoTeam;
 
     public Vector2Int boardPosition;
     private Board chessBoard;
