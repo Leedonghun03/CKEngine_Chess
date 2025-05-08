@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerInputHandler))]
 public class PlayerController : MonoBehaviour
 {
     private PlayerInputHandler input;
@@ -11,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float turnSpeed = 15.0f;
 
     [Header("잡기, 놓기 설정")]
-    [SerializeField] private Transform holdPoint;         // 플레이어 머리 위 빈 오브젝트
+    [SerializeField] private Transform holdPoint; // 플레이어 머리 위 빈 오브젝트
     [SerializeField] private float rayDistance = 0.5f;
     private ILiftAble heldLiftAble;
 
@@ -22,9 +21,19 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        HandleMovement();
-        HandleInteraction();
+        // moveVector의 값이 zero가 아니면 움직임 로직 작동
+        if (input.moveVector != Vector2.zero)
+        {
+            HandleMovement();
+        }
         
+        // PickTriggered가 true이면 체스말 들기 or 놓기 로직 작동
+        if (input.pickTriggered)
+        {
+            HandleInteraction();
+        }
+        
+        // 체스말 들기 or 놓기 사용하는 Ray 보기 위한 Debug 
         Debug.DrawRay(transform.position + Vector3.up, transform.forward, Color.red);
     }
     
@@ -45,12 +54,6 @@ public class PlayerController : MonoBehaviour
     // 플레이어 space바 입력
     private void HandleInteraction()
     {
-        // space가 눌렸을 때만
-        if (!input.pickTriggerd)
-        {
-            return;
-        }
-
         // 이미 들고 있다면 -> 놓기
         if (heldLiftAble != null)
         {
@@ -60,8 +63,6 @@ public class PlayerController : MonoBehaviour
         {
             GrabPiece();
         }
-        
-        input.pickTriggerd = false;
     }
     
     // 체스말 들기

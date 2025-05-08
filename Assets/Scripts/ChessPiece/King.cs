@@ -1,16 +1,10 @@
 using UnityEngine;
+using System.Collections.Generic;
 
-public class King : MonoBehaviour
+public class King : Pieces
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override List<Vector2Int> GetAvailableMoves(Board chessBoard)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return null;
     }
 }

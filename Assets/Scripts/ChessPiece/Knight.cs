@@ -27,6 +27,7 @@ public class Knight : Pieces
         {
             Vector2Int dest = boardPosition + moveOffset;
 
+            // 보드의 범위 확인
             if (!chessBoard.IsInside(dest))
             {
                 continue;

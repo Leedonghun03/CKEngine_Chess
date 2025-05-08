@@ -1,6 +1,7 @@
 using UnityEngine;
+using System.Collections.Generic;
 
-public class Rook : MonoBehaviour
+public class Rook : Pieces
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -12,5 +13,12 @@ public class Rook : MonoBehaviour
     void Update()
     {
         
+    }
+    
+    public override List<Vector2Int> GetAvailableMoves(Board chessBoard)
+    {
+        List<Vector2Int> moves = new List<Vector2Int>();
+
+        return null;
     }
 }

@@ -365,6 +365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15608791d11ad7e4bac1f7058287ed43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 1
+  boardPosition: {x: 0, y: 0}
 --- !u!33 &138986074
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -784,6 +786,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58dc4f19aeb12bf45bd416bc5e6bfbae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 2
+  boardPosition: {x: 0, y: 0}
 --- !u!1 &261289684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,6 +1407,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc231998b90385408dc2eb2c8cf7154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 2
+  boardPosition: {x: 0, y: 0}
 --- !u!1 &368717519
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,6 +2035,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15608791d11ad7e4bac1f7058287ed43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 1
+  boardPosition: {x: 0, y: 0}
 --- !u!33 &638527218
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2776,6 +2784,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc231998b90385408dc2eb2c8cf7154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 1
+  boardPosition: {x: 0, y: 0}
 --- !u!23 &961157855
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3348,6 +3358,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58dc4f19aeb12bf45bd416bc5e6bfbae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 1
+  boardPosition: {x: 0, y: 0}
 --- !u!33 &1313262992
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3469,6 +3481,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58dc4f19aeb12bf45bd416bc5e6bfbae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 1
+  boardPosition: {x: 0, y: 0}
 --- !u!1 &1356157561
 GameObject:
   m_ObjectHideFlags: 0
@@ -4039,6 +4053,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15608791d11ad7e4bac1f7058287ed43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 2
+  boardPosition: {x: 0, y: 0}
 --- !u!23 &1523473301
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4160,6 +4176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58dc4f19aeb12bf45bd416bc5e6bfbae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 2
+  boardPosition: {x: 0, y: 0}
 --- !u!33 &1589932743
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4281,6 +4299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15608791d11ad7e4bac1f7058287ed43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 2
+  boardPosition: {x: 0, y: 0}
 --- !u!4 &1686346965
 Transform:
   m_ObjectHideFlags: 0
@@ -4482,6 +4502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21019defc0d811b468315ca74362a09a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 1
+  boardPosition: {x: 0, y: 0}
 --- !u!33 &1689771253
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4523,6 +4545,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21019defc0d811b468315ca74362a09a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 2
+  boardPosition: {x: 0, y: 0}
 --- !u!33 &1694949633
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7049,6 +7073,7 @@ GameObject:
   - component: {fileID: 498253721881481921}
   - component: {fileID: 498253721881481983}
   - component: {fileID: 498253721881481982}
+  - component: {fileID: 498253721881481984}
   m_Layer: 0
   m_Name: Player_1
   m_TagString: Untagged
@@ -7104,7 +7129,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveVector: {x: 0, y: 0}
-  pickTriggerd: 0
+  pickTriggered: 0
+--- !u!114 &498253721881481984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498253721881481926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
+  m_NotificationBehavior: 3
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &498253721974756932
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using UnityEngine;
+using System.Collections.Generic;
 
-public class Queen : MonoBehaviour
+public class Queen : Pieces
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -12,5 +13,10 @@ public class Queen : MonoBehaviour
     void Update()
     {
         
+    }
+    
+    public override List<Vector2Int> GetAvailableMoves(Board chessBoard)
+    {
+        return null;
     }
 }
