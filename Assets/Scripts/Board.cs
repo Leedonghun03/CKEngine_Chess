@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Board : MonoBehaviour
 {
@@ -8,6 +8,9 @@ public class Board : MonoBehaviour
     
     private const int gridSize = 8;
     private Pieces[,] grid = new Pieces [gridSize, gridSize];
+    
+    private int[,] whiteAttackMap = new int[gridSize, gridSize];
+    private int[,] blackAttackMap = new int[gridSize, gridSize];
 
     // 월드 공간 좌표를 그리드 인덱스로 변환
     public Vector2Int WorldToGridPosition(Vector3 worldPos)
@@ -58,5 +61,21 @@ public class Board : MonoBehaviour
         
         if (pieces != null)
             pieces.boardPosition = gridPos; 
+    }
+
+    public void UpdateAttackMap(Pieces pieces, bool add)
+    {
+        int count = add ? 1 : -1;
+        int[,] attackTeamMap = pieces.team == TeamColor.White ? whiteAttackMap : blackAttackMap;
+
+        foreach (Vector2Int attackPos in pieces.GetAttackSquares(this))
+        {
+            if(!IsInside(attackPos))
+            {
+                continue;
+            }
+
+            attackTeamMap[attackPos.x, attackPos.y] += count;
+        }
     }
 }

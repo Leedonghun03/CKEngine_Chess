@@ -3,22 +3,43 @@ using System.Collections.Generic;
 
 public class Rook : Pieces
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Header("첫 이동 여부")]
+    [SerializeField] private bool hasMoved = false;
+    
+    private readonly List<Vector2Int> offsets = new()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        // 앞
+        new Vector2Int(0, 1),
+        // 뒤
+        new Vector2Int(0, -1),
+        // 왼
+        new Vector2Int(-1, 0),
+        // 오른
+        new Vector2Int(1, 0),
+    };
     
     public override List<Vector2Int> GetAvailableMoves(Board chessBoard)
     {
-        List<Vector2Int> moves = new List<Vector2Int>();
+        return SlideMoves(chessBoard, offsets);
+    }
+    
+    public override List<Vector2Int> GetAttackSquares(Board chessBoard)
+    {
+        return GetAvailableMoves(chessBoard);
+    }
+    
+    public override bool TryMoveTo(Vector2Int targetGridPosition)
+    {
+        if (!base.TryMoveTo(targetGridPosition))
+        {
+            return false;
+        }
 
-        return null;
+        if (!hasMoved)
+        {
+            hasMoved = true;
+        }
+        
+        return true;
     }
 }

@@ -15,35 +15,11 @@ public class Bishop : Pieces
     
     public override List<Vector2Int> GetAvailableMoves(Board chessBoard)
     {
-        List<Vector2Int> moves = new List<Vector2Int>();
-
-        foreach (var moveOffset in offsets)
-        {
-            for (int step = 1; step < 8; step++)
-            {
-                Vector2Int dest = boardPosition + moveOffset * step;
-                
-                if (!chessBoard.IsInside(dest))
-                {
-                    break;
-                }
-                
-                Pieces target = chessBoard.GetPiece(dest);
-                if (target == null)
-                {
-                    moves.Add(dest);
-                }
-                else
-                {
-                    if (target.team != team)
-                    {
-                        moves.Add(dest);
-                    }
-                    break;
-                }
-            }
-        }
-
-        return moves;
+        return SlideMoves(chessBoard, offsets);
+    }
+    
+    public override List<Vector2Int> GetAttackSquares(Board chessBoard)
+    {
+        return GetAvailableMoves(chessBoard);
     }
 }

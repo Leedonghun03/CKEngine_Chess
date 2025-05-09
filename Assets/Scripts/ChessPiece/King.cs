@@ -3,8 +3,50 @@ using System.Collections.Generic;
 
 public class King : Pieces
 {
+    [Header("첫 이동 여부")]
+    [SerializeField] private bool hasMoved = false;
+    
+    private readonly List<Vector2Int> offsets = new()
+    {
+        // 앞
+        new Vector2Int(0, 1),
+        // 뒤
+        new Vector2Int(0, -1),
+        // 왼
+        new Vector2Int(-1, 0),
+        // 오른
+        new Vector2Int(1, 0),
+        
+        // 앞 오른 대각
+        new Vector2Int(1, 1),
+        new Vector2Int(-1, 1),
+        // 뒤 왼 대각
+        new Vector2Int(1, -1),
+        new Vector2Int(-1, -1),
+    };
+    
     public override List<Vector2Int> GetAvailableMoves(Board chessBoard)
     {
-        return null;
+        return LeaperMoves(chessBoard, offsets, false);
+    }
+    
+    public override List<Vector2Int> GetAttackSquares(Board chessBoard)
+    {
+        return GetAvailableMoves(chessBoard);
+    }
+    
+    public override bool TryMoveTo(Vector2Int targetGridPosition)
+    {
+        if (!base.TryMoveTo(targetGridPosition))
+        {
+            return false;
+        }
+
+        if (!hasMoved)
+        {
+            hasMoved = true;
+        }
+        
+        return true;
     }
 }

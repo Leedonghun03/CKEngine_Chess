@@ -21,30 +21,11 @@ public class Knight : Pieces
 
     public override List<Vector2Int> GetAvailableMoves(Board chessBoard)
     {
-        List<Vector2Int> moves = new List<Vector2Int>();
-
-        foreach (var moveOffset in offsets)
-        {
-            Vector2Int dest = boardPosition + moveOffset;
-
-            // 보드의 범위 확인
-            if (!chessBoard.IsInside(dest))
-            {
-                continue;
-            }
-            
-            Pieces target = chessBoard.GetPiece(dest);
-            if (target == null)
-            {
-                moves.Add(dest);
-            }
-            else if (target.team != team)
-            {
-                // 죽이거나 or 전투 진입
-                moves.Add(dest);
-            }
-        }
-
-        return moves;
+        return LeaperMoves(chessBoard, offsets, false);
+    }
+    
+    public override List<Vector2Int> GetAttackSquares(Board chessBoard)
+    {
+        return GetAvailableMoves(chessBoard);
     }
 }

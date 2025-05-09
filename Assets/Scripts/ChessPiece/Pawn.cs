@@ -9,6 +9,8 @@ public class Pawn : Pieces
     [Header("이동 방향")]
     [SerializeField] private int dir;
 
+    private List<Vector2Int> diagOffsets;
+    
     public void Start()
     {
         // 팀에 따라서 이동 방향 정하기
@@ -20,6 +22,12 @@ public class Pawn : Pieces
         {
             dir = -1;
         }
+        
+        diagOffsets = new()
+        {
+            new Vector2Int(-1, dir),
+            new Vector2Int(1, dir)
+        };
     }
 
     public override List<Vector2Int> GetAvailableMoves(Board chessBoard)
@@ -44,21 +52,16 @@ public class Pawn : Pieces
         }
 
         // 대각선 캡처
-        foreach (int dx in new[]{ -1, 1 })
-        {
-            Vector2Int diag = boardPosition + new Vector2Int(dx, dir);
-            Pieces target = chessBoard.GetPiece(diag);
-            
-            // 죽이거나 or 전투 진입
-            if (target != null && target.team != this.team)
-            {
-                moves.Add(diag);
-            }
-        }
+        moves.AddRange(LeaperMoves(chessBoard, diagOffsets, true));
 
         return moves;
     }
 
+    public override List<Vector2Int> GetAttackSquares(Board chessBoard)
+    {
+        return LeaperMoves(chessBoard, diagOffsets, false);
+    }
+    
     public override bool TryMoveTo(Vector2Int targetGridPosition)
     {
         if (!base.TryMoveTo(targetGridPosition))

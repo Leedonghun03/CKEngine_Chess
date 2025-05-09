@@ -205,7 +205,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 823328299}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &49088394
 BoxCollider:
@@ -242,6 +242,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
 --- !u!4 &126362803
@@ -257,7 +259,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 823328299}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &126859411
 GameObject:
@@ -367,6 +369,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
 --- !u!33 &138986074
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -453,7 +457,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 823328299}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &142377595
 BoxCollider:
@@ -490,6 +494,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
 --- !u!4 &159505462
@@ -678,7 +684,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1857305256}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &257244804
 GameObject:
@@ -788,6 +794,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 2
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
+  hasMoved: 0
 --- !u!1 &261289684
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,7 +830,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1857305256}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &262220500
 MeshFilter:
@@ -911,6 +920,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 2
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
 --- !u!23 &302236309
@@ -999,7 +1010,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1857305256}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &304124524
 MeshFilter:
@@ -1042,7 +1053,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 823328299}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &304529526
 BoxCollider:
@@ -1079,6 +1090,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
 --- !u!23 &305254572
@@ -1161,6 +1174,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 2
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
 --- !u!4 &310437466
 Transform:
   m_ObjectHideFlags: 0
@@ -1174,7 +1189,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 823328299}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &310868602
 GameObject:
@@ -1284,6 +1299,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
 --- !u!1 &361335328
@@ -1319,7 +1336,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1857305256}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &363533536
 MeshRenderer:
@@ -1409,6 +1426,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 2
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
+  hasMoved: 0
 --- !u!1 &368717519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,8 +1461,38 @@ Transform:
   m_Children:
   - {fileID: 1722440499}
   - {fileID: 185232386}
-  - {fileID: 1857305256}
-  - {fileID: 823328299}
+  - {fileID: 1592799975}
+  - {fileID: 1520485847}
+  - {fileID: 257073828}
+  - {fileID: 1525373301}
+  - {fileID: 303354444}
+  - {fileID: 498010952}
+  - {fileID: 361633280}
+  - {fileID: 1686346965}
+  - {fileID: 528751695}
+  - {fileID: 1457378511}
+  - {fileID: 963582015}
+  - {fileID: 2043038997}
+  - {fileID: 1841463305}
+  - {fileID: 900551755}
+  - {fileID: 1697816865}
+  - {fileID: 261450484}
+  - {fileID: 597258130}
+  - {fileID: 126362803}
+  - {fileID: 1316130224}
+  - {fileID: 1251608572}
+  - {fileID: 377223965}
+  - {fileID: 1511899847}
+  - {fileID: 939191530}
+  - {fileID: 1689193380}
+  - {fileID: 304529525}
+  - {fileID: 142377594}
+  - {fileID: 641427154}
+  - {fileID: 2095197970}
+  - {fileID: 1504147664}
+  - {fileID: 1059333094}
+  - {fileID: 49088393}
+  - {fileID: 310437466}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &368717521
@@ -1523,7 +1573,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 823328299}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &377251645
 GameObject:
@@ -1580,6 +1630,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
 --- !u!1 &387708595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,7 +1804,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1857305256}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &498010953
 BoxCollider:
@@ -1789,6 +1841,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 2
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
 --- !u!1 &528711791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1822,7 +1876,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1857305256}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &530652847
 MeshRenderer:
@@ -1912,6 +1966,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 2
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
 --- !u!4 &597258130
@@ -1927,7 +1983,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 823328299}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &597619634
 GameObject:
@@ -2037,6 +2093,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
 --- !u!33 &638527218
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2103,7 +2161,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 823328299}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &641530610
 GameObject:
@@ -2160,6 +2218,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
 --- !u!1 &705507993
@@ -2259,7 +2319,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &823328298
+--- !u!1 &821826424
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2267,44 +2327,28 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 823328299}
+  - component: {fileID: 821826425}
   m_Layer: 0
-  m_Name: White
+  m_Name: === Manager ===
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &823328299
+--- !u!4 &821826425
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 823328298}
+  m_GameObject: {fileID: 821826424}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 597258130}
-  - {fileID: 126362803}
-  - {fileID: 1316130224}
-  - {fileID: 1251608572}
-  - {fileID: 377223965}
-  - {fileID: 1511899847}
-  - {fileID: 939191530}
-  - {fileID: 1689193380}
-  - {fileID: 304529525}
-  - {fileID: 142377594}
-  - {fileID: 641427154}
-  - {fileID: 2095197970}
-  - {fileID: 1504147664}
-  - {fileID: 1059333094}
-  - {fileID: 49088393}
-  - {fileID: 310437466}
-  m_Father: {fileID: 368717520}
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &876077644
 GameObject:
@@ -2593,7 +2637,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1857305256}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &900551756
 BoxCollider:
@@ -2630,6 +2674,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 2
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
 --- !u!1 &931045772
@@ -2725,11 +2771,11 @@ Transform:
   m_GameObject: {fileID: 939356362}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 3.75, y: 0, z: 0}
+  m_LocalPosition: {x: 5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 823328299}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &939356362
 GameObject:
@@ -2786,6 +2832,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
+  hasMoved: 0
 --- !u!23 &961157855
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2964,7 +3013,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1857305256}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &963582016
 BoxCollider:
@@ -3001,6 +3050,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 2
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
 --- !u!1 &1018764564
@@ -3198,7 +3249,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 823328299}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &1059333095
 BoxCollider:
@@ -3235,8 +3286,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
+--- !u!1 &1095557346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1095557347}
+  m_Layer: 0
+  m_Name: ===    Map    ===
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1095557347
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095557346}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1251608572
 Transform:
   m_ObjectHideFlags: 0
@@ -3250,7 +3334,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 823328299}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1251843036
 GameObject:
@@ -3360,6 +3444,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
+  hasMoved: 0
 --- !u!33 &1313262992
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3426,7 +3513,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 823328299}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1316295056
 GameObject:
@@ -3483,6 +3570,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
+  hasMoved: 0
 --- !u!1 &1356157561
 GameObject:
   m_ObjectHideFlags: 0
@@ -3592,7 +3682,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1857305256}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1458148591
 MeshFilter:
@@ -3682,6 +3772,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 2
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
 --- !u!23 &1501723184
@@ -3770,7 +3862,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 823328299}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &1504147665
 BoxCollider:
@@ -3807,6 +3899,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
 --- !u!1 &1511677671
@@ -3842,7 +3936,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 823328299}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &1512669927
 MeshFilter:
@@ -3932,6 +4026,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
 --- !u!23 &1518716727
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3998,7 +4094,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1857305256}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1520916983
 GameObject:
@@ -4055,6 +4151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 2
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
 --- !u!23 &1523473301
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4121,7 +4219,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1857305256}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1525466453
 GameObject:
@@ -4178,6 +4276,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 2
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
+  hasMoved: 0
 --- !u!33 &1589932743
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4244,7 +4345,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1857305256}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1593290439
 GameObject:
@@ -4301,6 +4402,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 2
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
 --- !u!4 &1686346965
 Transform:
   m_ObjectHideFlags: 0
@@ -4314,7 +4417,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1857305256}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1686372597
 GameObject:
@@ -4463,11 +4566,11 @@ Transform:
   m_GameObject: {fileID: 1688770436}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 5, y: 0, z: 0}
+  m_LocalPosition: {x: 3.75, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 823328299}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &1689193381
 BoxCollider:
@@ -4504,6 +4607,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
 --- !u!33 &1689771253
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4547,6 +4652,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 2
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
 --- !u!33 &1694949633
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4613,7 +4720,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1857305256}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1697987841
 GameObject:
@@ -4670,6 +4777,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 2
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
 --- !u!1 &1716181419
@@ -4904,7 +5013,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1857305256}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1841634345
 GameObject:
@@ -5014,9 +5123,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 2
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
---- !u!1 &1857305255
+--- !u!1 &1972523359
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5024,44 +5135,28 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1857305256}
+  - component: {fileID: 1972523360}
   m_Layer: 0
-  m_Name: Black
+  m_Name: ===  Players  ===
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1857305256
+--- !u!4 &1972523360
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1857305255}
+  m_GameObject: {fileID: 1972523359}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1592799975}
-  - {fileID: 1520485847}
-  - {fileID: 257073828}
-  - {fileID: 1525373301}
-  - {fileID: 303354444}
-  - {fileID: 498010952}
-  - {fileID: 361633280}
-  - {fileID: 1686346965}
-  - {fileID: 528751695}
-  - {fileID: 1457378511}
-  - {fileID: 963582015}
-  - {fileID: 2043038997}
-  - {fileID: 1841463305}
-  - {fileID: 900551755}
-  - {fileID: 1697816865}
-  - {fileID: 261450484}
-  m_Father: {fileID: 368717520}
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2042745141
 GameObject:
@@ -5096,7 +5191,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1857305256}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2044940277
 MeshRenderer:
@@ -5186,6 +5281,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 2
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
 --- !u!1 &2087042795
@@ -5297,7 +5394,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 823328299}
+  m_Father: {fileID: 368717520}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &2095428402
 GameObject:
@@ -5354,6 +5451,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   boardPosition: {x: 0, y: 0}
+  chessBoard: {fileID: 0}
+  indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
 --- !u!1 &1057649962671997
@@ -10032,12 +10131,15 @@ GameObject:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 963194228}
-  - {fileID: 876077647}
-  - {fileID: 705507995}
-  - {fileID: 498253721881481981}
-  - {fileID: 8406845054000770103}
-  - {fileID: 368717520}
-  - {fileID: 2087042796}
+  - {fileID: 821826425}
   - {fileID: 1356157562}
   - {fileID: 1716181421}
+  - {fileID: 1972523360}
+  - {fileID: 963194228}
+  - {fileID: 498253721881481981}
+  - {fileID: 876077647}
+  - {fileID: 8406845054000770103}
+  - {fileID: 1095557347}
+  - {fileID: 2087042796}
+  - {fileID: 368717520}
+  - {fileID: 705507995}

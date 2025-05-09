@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class MoveIndicatorManager : MonoBehaviour
 {
@@ -7,8 +7,8 @@ public class MoveIndicatorManager : MonoBehaviour
     [SerializeField] private GameObject moveIndicatorPrefab;
     [SerializeField] private int poolingSize = 30;
 
-    private Queue<GameObject> moveIndicatorObjectPool = new Queue<GameObject>();
-    private List<GameObject> activeObjects = new List<GameObject>();
+    private Queue<GameObject> moveIndicatorObjectPool = new();
+    private List<GameObject> activeObjects = new();
 
     public void Awake()
     {
