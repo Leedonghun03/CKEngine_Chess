@@ -64,6 +64,11 @@ public class Board : MonoBehaviour
             pieces.boardPosition = gridPos; 
     }
 
+    // To-do : 기물 이동시 공격 받고 있던 기물이면 공격중인 기물 공격 가능 업데이트,
+    //         만약 그 기물이 팀 기물을 막고 공격 경로를 막고 있었다면 그 부분도 다시 업데이트,
+    //         이동한 곳이 공격 받던 곳이면 공격중인 기물의 공격 범위 다시 업데이트
+    //         총 3가지 업데이트 필요
+    
     // 적의 기물 공격 위치를 담아두기 위한 함수
     public void UpdateAttackMap(Pieces pieces, bool add)
     {
