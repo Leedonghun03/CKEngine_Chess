@@ -41,12 +41,11 @@ public class PlayerInputHandler : MonoBehaviour
     public void OnPickStarted(InputAction.CallbackContext context)
     {
         pickTriggerd = true;
-        Debug.Log("Pick Pressed!");
     }
 
     public void OnPickCanceled(InputAction.CallbackContext context)
     {
-
+        pickTriggerd = false;
     }
 
     private void OnDestroy()
