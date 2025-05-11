@@ -4,7 +4,8 @@ using System.Collections.Generic;
 public class Rook : Pieces
 {
     [Header("첫 이동 여부")]
-    [SerializeField] private bool hasMoved = false;
+    public bool hasMoved = false;
+
     
     private readonly List<Vector2Int> offsets = new()
     {
@@ -17,29 +18,24 @@ public class Rook : Pieces
         // 오른
         new Vector2Int(1, 0),
     };
-    
-    public override List<Vector2Int> GetAvailableMoves(Board chessBoard)
+
+    protected override List<Vector2Int> GetAvailableMoves()
     {
-        return SlideMoves(chessBoard, offsets);
+        return SlideMoves(offsets);
     }
     
-    public override List<Vector2Int> GetAttackSquares(Board chessBoard)
+    public override List<Vector2Int> GetAttackSquares()
     {
-        return GetAvailableMoves(chessBoard);
+        return GetAvailableMoves();
     }
     
-    public override bool TryMoveTo(Vector2Int targetGridPosition)
+    protected override void PerformMove(Vector2Int targetGridPosition)
     {
-        if (!base.TryMoveTo(targetGridPosition))
-        {
-            return false;
-        }
+        base.PerformMove(targetGridPosition);
 
         if (!hasMoved)
         {
             hasMoved = true;
         }
-        
-        return true;
     }
 }

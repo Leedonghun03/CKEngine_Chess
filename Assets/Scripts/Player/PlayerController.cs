@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private PlayerInputHandler input;
+    [Header("플레이어 입력 핸들러")]
+    [SerializeField] private PlayerInputHandler input;
     
-    [Header("이동 속도")]
+    [Header("이동, 회전 속도")]
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] private float turnSpeed = 15.0f;
 

@@ -7,16 +7,16 @@ public class Pawn : Pieces
     [SerializeField] private bool hasMoved = false;
     
     [Header("이동 방향")]
-    [SerializeField] private int dir;
-
+    [SerializeField] private int dir;    
+    
     private List<Vector2Int> diagOffsets;
     
-    public void Start()
+    private void OnEnable()
     {
         // 팀에 따라서 이동 방향 정하기
         if (team == TeamColor.White)
         {
-            dir = +1;
+            dir = 1;
         }
         else
         {
@@ -30,13 +30,13 @@ public class Pawn : Pieces
         };
     }
 
-    public override List<Vector2Int> GetAvailableMoves(Board chessBoard)
+    protected override List<Vector2Int> GetAvailableMoves()
     {
         List<Vector2Int> moves = new List<Vector2Int>();
         
         // 기본 이동
         Vector2Int oneMove  = boardPosition + new Vector2Int(0, dir);
-        if (chessBoard.IsInside(oneMove) && chessBoard.GetPiece(oneMove) == null)
+        if (!chessBoard.GetPiece(oneMove))
         {
             moves.Add(oneMove);
         }
@@ -45,35 +45,52 @@ public class Pawn : Pieces
         if (!hasMoved)
         {
             Vector2Int twoMove = boardPosition + new Vector2Int(0, dir * 2);
-            if (chessBoard.GetPiece(twoMove) == null)
+            if (!chessBoard.GetPiece(twoMove))
             {
                 moves.Add(twoMove);
             }
         }
 
-        // 대각선 캡처
-        moves.AddRange(LeaperMoves(chessBoard, diagOffsets, true));
+        // 대각선 적 확인
+        foreach (Vector2Int diagOffset in diagOffsets)
+        {
+            Pieces target = chessBoard.GetPiece(diagOffset);
+            
+            if (target && target.team != this.team)
+            {
+                // 죽이거나 or 전투 진입
+                moves.Add(diagOffset);
+            }
+        }
 
         return moves;
     }
 
-    public override List<Vector2Int> GetAttackSquares(Board chessBoard)
+    public override List<Vector2Int> GetAttackSquares()
     {
-        return LeaperMoves(chessBoard, diagOffsets, false);
+        List<Vector2Int> moves = new List<Vector2Int>();
+        
+        foreach (Vector2Int diagOffset in diagOffsets)
+        {
+            Pieces target = chessBoard.GetPiece(diagOffset);
+            
+            if (target && target.team != this.team)
+            {
+                // 죽이거나 or 전투 진입
+                moves.Add(diagOffset);
+            }
+        }
+        
+        return moves;
     }
     
-    public override bool TryMoveTo(Vector2Int targetGridPosition)
+    protected override void PerformMove(Vector2Int targetGridPosition)
     {
-        if (!base.TryMoveTo(targetGridPosition))
-        {
-            return false;
-        }
+        base.PerformMove(targetGridPosition);
 
         if (!hasMoved)
         {
             hasMoved = true;
         }
-        
-        return true;
     }
 }

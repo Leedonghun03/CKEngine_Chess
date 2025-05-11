@@ -21,14 +21,14 @@ public class Queen : Pieces
         new Vector2Int(1, -1),
         new Vector2Int(-1, -1),
     };
-    
-    public override List<Vector2Int> GetAvailableMoves(Board chessBoard)
+
+    protected override List<Vector2Int> GetAvailableMoves()
     {
-        return SlideMoves(chessBoard, offsets);
+        return SlideMoves(offsets);
     }
     
-    public override List<Vector2Int> GetAttackSquares(Board chessBoard)
+    public override List<Vector2Int> GetAttackSquares()
     {
-        return GetAvailableMoves(chessBoard);
+        return GetAvailableMoves();
     }
 }

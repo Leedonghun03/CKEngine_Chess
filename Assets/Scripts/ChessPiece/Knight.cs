@@ -19,13 +19,13 @@ public class Knight : Pieces
         new Vector2Int(-2, -1)
     };
 
-    public override List<Vector2Int> GetAvailableMoves(Board chessBoard)
+    protected override List<Vector2Int> GetAvailableMoves()
     {
-        return LeaperMoves(chessBoard, offsets, false);
+        return LeaperMoves(offsets);
     }
     
-    public override List<Vector2Int> GetAttackSquares(Board chessBoard)
+    public override List<Vector2Int> GetAttackSquares()
     {
-        return GetAvailableMoves(chessBoard);
+        return GetAvailableMoves();
     }
 }
