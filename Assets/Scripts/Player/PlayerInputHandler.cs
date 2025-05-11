@@ -1,59 +1,52 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    InputAction MoveAction;
-    InputAction PickUpAction;
+    private PlayerInput playerInput;
 
-    [FormerlySerializedAs("MoveVector")]
+    [Header("입력 들어온 방향")]
     public Vector2 moveVector;
+    [Header("스페이스 바 눌렸는지 확인")]
+    public bool pickTriggered;
 
-    public bool pickTriggerd;
-
-    private void Start()
+    private void Awake()
     {
-        MoveAction = InputSystem.actions.FindAction("Move");
-        MoveAction.performed += OnMovePerformed;
-        MoveAction.canceled += OnMoveCanceled;
-
-        PickUpAction = InputSystem.actions.FindAction("PickUp");
-        PickUpAction.started += OnPickStarted;
-        PickUpAction.canceled += OnPickCanceled;
-
-        MoveAction.Enable();
-        PickUpAction.Enable();
+        playerInput =  GetComponent<PlayerInput>();
+    }
+    
+    private void OnEnable()
+    {
+        playerInput.onActionTriggered += OnActionTriggered;
     }
 
-    public void OnMovePerformed(InputAction.CallbackContext context)
+    private void OnDisable()
     {
-        moveVector = context.ReadValue<Vector2>();
-        Debug.Log("Move Input : " + moveVector);
+        playerInput.onActionTriggered -= OnActionTriggered;
     }
 
-    public void OnMoveCanceled(InputAction.CallbackContext context)
+    void OnActionTriggered(InputAction.CallbackContext context)
     {
-        moveVector = Vector2.zero;
-        Debug.Log("Move Canceled - Stopping");
+        if (context.action.name == "Move")
+        {
+            if (context.performed)
+            {
+                moveVector = context.ReadValue<Vector2>();
+            }
+            else if(context.canceled)
+            {
+                moveVector = Vector2.zero;
+            }
+        }
+
+        if (context.action.name == "PickUp" && context.started)
+        {
+            pickTriggered = true;
+        }
     }
 
-    public void OnPickStarted(InputAction.CallbackContext context)
+    private void LateUpdate()
     {
-        pickTriggerd = true;
-    }
-
-    public void OnPickCanceled(InputAction.CallbackContext context)
-    {
-        pickTriggerd = false;
-    }
-
-    private void OnDestroy()
-    {
-        MoveAction.performed -= OnMovePerformed;
-        MoveAction.canceled -= OnMoveCanceled;
-
-        PickUpAction.started -= OnPickStarted;
-        PickUpAction.canceled -= OnPickCanceled;
+        pickTriggered = false;
     }
 }
