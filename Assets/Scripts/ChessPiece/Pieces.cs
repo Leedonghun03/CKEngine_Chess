@@ -95,7 +95,6 @@ public class Pieces : MonoBehaviour, ILiftAble
                 {
                     if (target && target.team != this.team)
                     {
-                        // 죽이거나 or 전투 진입
                         moves.Add(dest);
                     }
                     break;
@@ -127,7 +126,6 @@ public class Pieces : MonoBehaviour, ILiftAble
             }
             else if (target && target.team != this.team)
             {
-                // 죽이거나 or 전투 진입
                 moves.Add(dest);
             }
         }
@@ -137,15 +135,13 @@ public class Pieces : MonoBehaviour, ILiftAble
 
     protected virtual void PerformMove(Vector2Int targetGridPosition)
     {
-        // 보드 논리 갱신
-        Vector2Int oldPieces = boardPosition;
-        Vector2Int newPieces = targetGridPosition;
+        // 그리드 논리 이동
+        Vector2Int oldPiecesPos = boardPosition;
+        chessBoard.SetPiece(null, oldPiecesPos);
+        chessBoard.SetPiece(this, targetGridPosition);
         
-        chessBoard.SetPiece(oldPieces, null);
-        chessBoard.UpdateAttackMap(this, false);
-
-        chessBoard.SetPiece(newPieces, this);
-        chessBoard.UpdateAttackMap(this, true);
+        // 공격 맵 갱신
+        chessBoard.UpdateAttackMaps(this, oldPiecesPos, targetGridPosition);
         
         // 그리드 좌표에서 월드 좌표로 스냅
         transform.SetParent(chessBoard.transform, false);

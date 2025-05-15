@@ -54,12 +54,12 @@ public class Pawn : Pieces
         // 대각선 적 확인
         foreach (Vector2Int diagOffset in diagOffsets)
         {
-            Pieces target = chessBoard.GetPiece(diagOffset);
+            Pieces target = chessBoard.GetPiece(boardPosition + diagOffset);
             
             if (target && target.team != this.team)
             {
-                // 죽이거나 or 전투 진입
-                moves.Add(diagOffset);
+                Vector2Int attack = boardPosition + diagOffset;
+                moves.Add(attack);
             }
         }
 
@@ -72,13 +72,8 @@ public class Pawn : Pieces
         
         foreach (Vector2Int diagOffset in diagOffsets)
         {
-            Pieces target = chessBoard.GetPiece(diagOffset);
-            
-            if (target && target.team != this.team)
-            {
-                // 죽이거나 or 전투 진입
-                moves.Add(diagOffset);
-            }
+            Vector2Int attack = boardPosition + diagOffset;
+            moves.Add(attack);
         }
         
         return moves;

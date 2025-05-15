@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Board : MonoBehaviour
 {
@@ -7,12 +9,37 @@ public class Board : MonoBehaviour
 
     // 체스판 크기, 배열
     private const int gridSize = 8;
+    // 이 보드 gird 배열 나중에 1차원으로 변경 필요
     private readonly Pieces[,] grid = new Pieces [gridSize, gridSize];
     
     // 각 팀의 기물들이 공격 가능한 위치 (체크메이트 or 캐슬링 판별)
-    public readonly int[,] whiteAttackMap = new int[gridSize, gridSize];
-    public readonly int[,] blackAttackMap = new int[gridSize, gridSize];
+    public readonly List<Pieces>[,] whiteAttackMap = new List<Pieces>[gridSize, gridSize];
+    public readonly List<Pieces>[,] blackAttackMap = new List<Pieces>[gridSize, gridSize];
     
+    // 8방향 벡터를 한 번만 생성해 두는 static 필드
+    private readonly Vector2Int[] allDirections = {
+        new ( 1, 0), // 동
+        new (-1, 0), // 서
+        new ( 0, 1), // 북
+        new ( 0,-1), // 남
+        new ( 1, 1), // 북동
+        new (-1, 1), // 북서
+        new ( 1,-1), // 남동
+        new (-1,-1), // 남서
+    };
+
+    private void Awake()
+    {
+        for (int x = 0; x < gridSize; x++)
+        {
+            for (int y = 0; y < gridSize; y++)
+            {
+                whiteAttackMap[x, y] = new List<Pieces>();
+                blackAttackMap[x, y] = new List<Pieces>();
+            }
+        }
+    }
+
     // 월드 공간 좌표를 그리드 인덱스로 변환하는 함수
     public Vector2Int WorldToGridPosition(Vector3 worldPos)
     {
@@ -51,7 +78,7 @@ public class Board : MonoBehaviour
     }
 
     // 유요한 그리드 위치에 Pieces 객체를 설정하는 함수
-    public void SetPiece(Vector2Int gridPos, Pieces pieces)
+    public void SetPiece(Pieces pieces, Vector2Int gridPos)
     {
         if (!IsInside(gridPos))
         {
@@ -59,27 +86,77 @@ public class Board : MonoBehaviour
         }
         
         grid[gridPos.x, gridPos.y] = pieces;
-        
-        if (pieces != null)
+
+        if (pieces)
+        {
             pieces.boardPosition = gridPos; 
+        }
     }
 
-    // To-do : 기물 이동시 공격 받고 있던 기물이면 공격중인 기물 공격 가능 업데이트,
-    //         만약 그 기물이 팀 기물을 막고 공격 경로를 막고 있었다면 그 부분도 다시 업데이트,
+    // To-do : 공격 받고 있던 기물 이동시 공격중인 기물 공격 가능 범위 업데이트,
+    //         그리고 이동한 기물이 팀 기물의 공격 경로를 막고 있었다면 그 부분도 다시 업데이트,
     //         이동한 곳이 공격 받던 곳이면 공격중인 기물의 공격 범위 다시 업데이트
     //         총 3가지 업데이트 필요
-    
-    // 적의 기물 공격 위치를 담아두기 위한 함수
-    public void UpdateAttackMap(Pieces pieces, bool add)
+    public void UpdateAttackMaps(Pieces movePieces, Vector2Int oldPiecesPos, Vector2Int newPiecesPos)
     {
-        int count = add ? 1 : -1;
-        int[,] attackTeamMap = pieces.team == TeamColor.White ? whiteAttackMap : blackAttackMap;
+        movePieces.boardPosition = oldPiecesPos;
+        UpdateAttackCoverageAt(movePieces, false);
+        
+        movePieces.boardPosition = newPiecesPos;
+        UpdateAttackCoverageAt(movePieces, true);
+        
+        foreach (Vector2Int dir in allDirections)
+        {
+            RefreshAttackMap(oldPiecesPos, dir);
+            RefreshAttackMap(newPiecesPos, dir);
+        }
+    }
+    
+    // 공격을 당하고 있던 체스 말이 이동하면 pivotPos 위치 기준으로 8 방향 탐색한다.
+    // 공격하고 있는 체스 말을 새롭게 다시 공격 범위 Update 및 팀원도 해준다.
+    private void RefreshAttackMap(Vector2Int pivotPos, Vector2Int dir)
+    {
+        Vector2Int scan = pivotPos + dir;
+        while (IsInside(scan))
+        {
+            Pieces otherPiece = GetPiece(scan);
+
+            if (otherPiece)
+            {
+                UpdateAttackCoverageAt(otherPiece, false);
+                UpdateAttackCoverageAt(otherPiece, true);
+                break;
+            }
+
+            scan += dir;
+        }
+    }
+    
+    // 기물 공격 위치를 담아두기 위한 함수
+    public void UpdateAttackCoverageAt(Pieces pieces, bool add)
+    {
+        List<Pieces>[,] attackMap = pieces.team == TeamColor.White ? whiteAttackMap : blackAttackMap;
 
         foreach (Vector2Int attackPos in pieces.GetAttackSquares())
         {
-            if(IsInside(attackPos))
+            if (!IsInside(attackPos))
             {
-                attackTeamMap[attackPos.x, attackPos.y] += count;
+                continue;
+            }
+            
+            if(add)
+            {
+                if (!attackMap[attackPos.x, attackPos.y].Contains(pieces))
+                {
+                    attackMap[attackPos.x, attackPos.y].Add(pieces);
+                }
+            }
+            else
+            {
+                if (attackMap[attackPos.x, attackPos.y].Contains(pieces))
+                {
+                    attackMap[attackPos.x, attackPos.y].Remove(pieces);
+                }
             }
         }
     }
