@@ -62,7 +62,7 @@ public class King : Pieces
         // 캐슬링
         if (Mathf.Abs(isTwoMove.x) == 2)
         {
-            ExecuteCastle(isTwoMove, chessBoard);
+            ExecuteCastle(isTwoMove);
         }
         else
         {
@@ -103,7 +103,7 @@ public class King : Pieces
         }
         
         // 캔슬링하는 위치가 공격을 받고 있는지 확인
-        int[,] enemyAttackMap = team == TeamColor.White ? board.blackAttackMap : board.whiteAttackMap;
+        List<Pieces>[,] enemyAttackMap = team == TeamColor.White ? board.blackAttackMap : board.whiteAttackMap;
         int dir = (int)Mathf.Sign(offset.x);
         int offSetX = Mathf.Abs(offset.x);
         
@@ -111,7 +111,7 @@ public class King : Pieces
         {
             int x = boardPosition.x + dir * i;
             
-            if (enemyAttackMap[x, boardPosition.y] > 0)
+            if (enemyAttackMap[x, boardPosition.y] != null)
             {
                 return false;
             }
@@ -121,7 +121,7 @@ public class King : Pieces
     }
 
     // 실제 캐슬링 이동하는 함수 코드
-    private void ExecuteCastle(Vector2Int offset, Board board)
+    private void ExecuteCastle(Vector2Int offset)
     {
         // === 킹 이동 ===
         Vector2Int oldKingPos = boardPosition;
@@ -137,17 +137,15 @@ public class King : Pieces
         
         Vector2Int oldRookPos = new Vector2Int(rookPosX, rookPosY);
         Vector2Int newRookPos = new Vector2Int(newKingPos.x - dir, rookPosY);
+        Rook rook = chessBoard.GetPiece(oldRookPos) as Rook;
         
-        Rook rook = board.GetPiece(oldRookPos) as Rook;
+        chessBoard.SetPiece(null, oldRookPos);
+        chessBoard.SetPiece(rook, newRookPos);
         
-        board.SetPiece(oldRookPos, null);
-        board.UpdateAttackMap(rook, false);
-        
-        board.SetPiece(newRookPos, rook);
-        board.UpdateAttackMap(rook, true);
+        chessBoard.UpdateAttackMaps(rook, oldRookPos, newRookPos);
 
-        rook.transform.SetParent(board.transform, false);
-        rook.transform.position = board.GridToWorldPosition(newRookPos);
+        rook.transform.SetParent(chessBoard.transform, false);
+        rook.transform.position = chessBoard.GridToWorldPosition(newRookPos);
         rook.hasMoved = true;
     }
 }

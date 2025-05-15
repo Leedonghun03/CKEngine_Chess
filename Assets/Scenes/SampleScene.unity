@@ -243,6 +243,7 @@ MonoBehaviour:
   team: 1
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
@@ -370,6 +371,7 @@ MonoBehaviour:
   team: 1
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
 --- !u!33 &138986074
 MeshFilter:
@@ -495,6 +497,7 @@ MonoBehaviour:
   team: 1
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
@@ -795,6 +798,7 @@ MonoBehaviour:
   team: 2
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
 --- !u!1 &261289684
@@ -921,6 +925,7 @@ MonoBehaviour:
   team: 2
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
@@ -1091,6 +1096,7 @@ MonoBehaviour:
   team: 1
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
@@ -1175,6 +1181,7 @@ MonoBehaviour:
   team: 2
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
 --- !u!4 &310437466
 Transform:
@@ -1300,6 +1307,7 @@ MonoBehaviour:
   team: 1
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
@@ -1427,6 +1435,7 @@ MonoBehaviour:
   team: 2
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
 --- !u!1 &368717519
@@ -1631,6 +1640,7 @@ MonoBehaviour:
   team: 1
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
 --- !u!1 &387708595
 GameObject:
@@ -1842,6 +1852,7 @@ MonoBehaviour:
   team: 2
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
 --- !u!1 &528711791
 GameObject:
@@ -1967,6 +1978,7 @@ MonoBehaviour:
   team: 2
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
@@ -2094,6 +2106,7 @@ MonoBehaviour:
   team: 1
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
 --- !u!33 &638527218
 MeshFilter:
@@ -2219,6 +2232,7 @@ MonoBehaviour:
   team: 1
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
@@ -2367,7 +2381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &876077645
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2435,13 +2449,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876077644}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.93358046, z: 0.35836798, w: 0}
-  m_LocalPosition: {x: 4.85, y: 7.8, z: 13.7}
+  m_LocalRotation: {x: 0, y: -0.9063079, z: 0.42261827, w: 0}
+  m_LocalPosition: {x: 4, y: 10, z: 13.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 42, y: -180, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: -180, z: 0}
 --- !u!1 &877317448
 GameObject:
   m_ObjectHideFlags: 0
@@ -2675,6 +2689,7 @@ MonoBehaviour:
   team: 2
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
@@ -2833,6 +2848,7 @@ MonoBehaviour:
   team: 1
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
 --- !u!23 &961157855
@@ -2993,13 +3009,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.35836798, y: 0, z: 0, w: 0.93358046}
-  m_LocalPosition: {x: 4.85, y: 7.8, z: -5}
+  m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
+  m_LocalPosition: {x: 4, y: 10, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 42, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
 --- !u!4 &963582015
 Transform:
   m_ObjectHideFlags: 0
@@ -3051,6 +3067,7 @@ MonoBehaviour:
   team: 2
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
@@ -3287,6 +3304,7 @@ MonoBehaviour:
   team: 1
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
@@ -3445,6 +3463,7 @@ MonoBehaviour:
   team: 1
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
 --- !u!33 &1313262992
@@ -3571,6 +3590,7 @@ MonoBehaviour:
   team: 1
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
 --- !u!1 &1356157561
@@ -3617,7 +3637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78404537e68649a4f87fc0a16c26d3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  board: {fileID: 368717521}
+  chessBoard: {fileID: 368717521}
 --- !u!1 &1438439497
 GameObject:
   m_ObjectHideFlags: 0
@@ -3678,7 +3698,7 @@ Transform:
   m_GameObject: {fileID: 1457146095}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.25, y: 0, z: 7.5}
+  m_LocalPosition: {x: 1.25, y: 0, z: 7.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3773,6 +3793,7 @@ MonoBehaviour:
   team: 2
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
@@ -3900,6 +3921,7 @@ MonoBehaviour:
   team: 1
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
@@ -4027,6 +4049,7 @@ MonoBehaviour:
   team: 1
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
 --- !u!23 &1518716727
 MeshRenderer:
@@ -4152,6 +4175,7 @@ MonoBehaviour:
   team: 2
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
 --- !u!23 &1523473301
 MeshRenderer:
@@ -4277,6 +4301,7 @@ MonoBehaviour:
   team: 2
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
 --- !u!33 &1589932743
@@ -4403,6 +4428,7 @@ MonoBehaviour:
   team: 2
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
 --- !u!4 &1686346965
 Transform:
@@ -4608,6 +4634,7 @@ MonoBehaviour:
   team: 1
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
 --- !u!33 &1689771253
 MeshFilter:
@@ -4653,6 +4680,7 @@ MonoBehaviour:
   team: 2
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
 --- !u!33 &1694949633
 MeshFilter:
@@ -4778,6 +4806,7 @@ MonoBehaviour:
   team: 2
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
@@ -5124,6 +5153,7 @@ MonoBehaviour:
   team: 2
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
@@ -5282,6 +5312,7 @@ MonoBehaviour:
   team: 2
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
@@ -5452,6 +5483,7 @@ MonoBehaviour:
   team: 1
   boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
   dir: 0
@@ -7211,6 +7243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064562f3f3cd4e64ebc5be97fa08e393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  input: {fileID: 0}
   moveSpeed: 5
   turnSpeed: 15
   holdPoint: {fileID: 931045773}
