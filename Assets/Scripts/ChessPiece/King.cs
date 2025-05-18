@@ -54,10 +54,10 @@ public class King : Pieces
         return GetAvailableMoves();
     }
     
-    protected override void PerformMove(Vector2Int targetGridPosition)
+    protected override void PerformMove(Vector2Int dropGridPosition)
     {
         // (놓을 위치) - (원래 있던 위치) 해서 2칸 이동했는지 확인
-        Vector2Int isTwoMove = targetGridPosition - boardPosition;
+        Vector2Int isTwoMove = dropGridPosition - boardPosition;
         
         // 캐슬링
         if (Mathf.Abs(isTwoMove.x) == 2)
@@ -66,7 +66,7 @@ public class King : Pieces
         }
         else
         {
-            base.PerformMove(targetGridPosition);
+            base.PerformMove(dropGridPosition);
         }
 
         if (!hasMoved)
