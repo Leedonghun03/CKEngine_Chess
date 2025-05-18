@@ -79,9 +79,9 @@ public class Pawn : Pieces
         return moves;
     }
     
-    protected override void PerformMove(Vector2Int targetGridPosition)
+    protected override void PerformMove(Vector2Int dropGridPosition)
     {
-        base.PerformMove(targetGridPosition);
+        base.PerformMove(dropGridPosition);
 
         if (!hasMoved)
         {

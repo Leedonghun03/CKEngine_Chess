@@ -241,8 +241,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -369,8 +370,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
 --- !u!33 &138986074
@@ -495,8 +497,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -796,8 +799,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -923,8 +927,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -1094,8 +1099,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -1179,8 +1185,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
 --- !u!4 &310437466
@@ -1305,8 +1312,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -1433,8 +1441,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -1638,8 +1647,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
 --- !u!1 &387708595
@@ -1850,8 +1860,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
 --- !u!1 &528711791
@@ -1976,8 +1987,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -2104,8 +2116,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
 --- !u!33 &638527218
@@ -2230,8 +2243,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -2687,8 +2701,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -2718,7 +2733,7 @@ Transform:
   m_GameObject: {fileID: 931045772}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.861, z: 0}
+  m_LocalPosition: {x: 0, y: 0.85, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2846,8 +2861,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -3065,8 +3081,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -3302,8 +3319,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -3461,8 +3479,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -3588,8 +3607,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -3791,8 +3811,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -3919,8 +3940,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -4047,8 +4069,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
 --- !u!23 &1518716727
@@ -4173,8 +4196,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
 --- !u!23 &1523473301
@@ -4299,8 +4323,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -4426,8 +4451,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
 --- !u!4 &1686346965
@@ -4632,8 +4658,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
 --- !u!33 &1689771253
@@ -4678,8 +4705,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
 --- !u!33 &1694949633
@@ -4804,8 +4832,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -5151,8 +5180,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -5310,8 +5340,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
@@ -5481,8 +5512,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  boardPosition: {x: 0, y: 0}
   chessBoard: {fileID: 0}
+  boardPosition: {x: 0, y: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
   legalMoves: []
   indicatorManager: {fileID: 0}
   hasMoved: 0
