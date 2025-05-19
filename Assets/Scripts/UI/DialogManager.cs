@@ -20,5 +20,7 @@ public static class DialogManager {
     }
 
     public static Instance? Current { get; set; } = null;
+
+    public static bool showRoomCreate = false;
 #nullable disable
 }
