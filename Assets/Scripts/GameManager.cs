@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
         }
         
         // 각 팀에 공격 가능한 위치 초기화
-        // pawn, knight 외에는 pawn이 막고 있어서 이동 불가능
+        // pawn, knight 외에는 pawn이 막고 있어서 공격 불가능
         foreach (var pawn in FindObjectsByType<Pawn>(FindObjectsSortMode.None))
         {
             chessBoard.UpdateAttackCoverageAt(pawn, true);

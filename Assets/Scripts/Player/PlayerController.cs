@@ -88,8 +88,8 @@ public class PlayerController : MonoBehaviour
     // 체스말 내려놓기
     void PlaceHeldPiece()
     {
-        // 월드에 다시 놓을 월드 위치 계산 (플레이어 앞 1유닛)
-        Vector3 dropWorldPos = holdPoint.position + transform.forward * 1.0f;           
+        // 월드에 다시 놓을 월드 위치 계산 (플레이어 앞 rayDistance 만큼)
+        Vector3 dropWorldPos = holdPoint.position + transform.forward * rayDistance;           
         
         if (heldLiftAble.TryPlaceOnBoard(dropWorldPos))
         {
