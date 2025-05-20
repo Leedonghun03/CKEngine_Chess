@@ -33,7 +33,7 @@ public class King : Pieces
 
     protected override List<Vector2Int> GetAvailableMoves()
     {
-        var moves = LeaperMoves(offsets);
+        List<Vector2Int> moves = LeaperMoves(offsets);
 
         if (!hasMoved)
         {

@@ -29,7 +29,7 @@ public class MoveIndicatorManager : MonoBehaviour
     }
 
     // 체스 말 이동 가능 위치 보여주는 함수
-    public void ShowMoveIndicator(Board board, IEnumerable<Vector2Int> position)
+    public void ShowMoveIndicator(Board chessBoard, IEnumerable<Vector2Int> position)
     {
         ClearMoveIndicator();
 
@@ -41,7 +41,7 @@ public class MoveIndicatorManager : MonoBehaviour
             }
             
             GameObject instance = moveIndicatorObjectPool.Dequeue();
-            Vector3 worldPos = board.GridToWorldPosition(gridPos);
+            Vector3 worldPos = chessBoard.GridToWorldPosition(gridPos);
             instance.transform.position = new Vector3(worldPos.x, 0.01f, worldPos.z);
             instance.SetActive(true);
             activeObjects.Add(instance);
