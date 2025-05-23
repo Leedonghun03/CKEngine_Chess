@@ -6,11 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class RoomUIBtnCallbacks : MonoBehaviour
 {
-    public void OnQuitBtn() {
-        if (ChessClientManager.UnsafeClient?.State is GameRoomState rs) {
-            rs.QuitRoom().Then(e => {
+    public void OnQuitBtn()
+    {
+        if (ChessClientManager.UnsafeClient?.State is GameRoomState rs)
+        {
+            rs.QuitRoom().Then(e =>
+            {
                 if (e == EndoAshu.Chess.Room.RoomQuitPacket.QuitStatus.KICKED
-                || e == EndoAshu.Chess.Room.RoomQuitPacket.QuitStatus.SELF_QUIT) {
+                || e == EndoAshu.Chess.Room.RoomQuitPacket.QuitStatus.SELF_QUIT)
+                {
                     SceneManager.LoadScene("LobbyScene");
                 }
             });
@@ -21,9 +25,22 @@ public class RoomUIBtnCallbacks : MonoBehaviour
     public void SetPlayerModeTeam2() => SetPlayerModeBtn(PlayerMode.TEAM2);
     public void SetPlayerModeTeamObserver() => SetPlayerModeBtn(PlayerMode.OBSERVER);
 
-    public void SetPlayerModeBtn(PlayerMode mode) {
-        if (ChessClientManager.UnsafeClient?.State is GameRoomState rs) {
+    public void SetPlayerModeBtn(PlayerMode mode)
+    {
+        if (ChessClientManager.UnsafeClient?.State is GameRoomState rs)
+        {
             rs.SetPlayerMode(mode);
+        }
+    }
+
+    public void OnStartBtn()
+    {
+        if (ChessClientManager.UnsafeClient?.State is GameRoomState rs)
+        {
+            rs.StartRoom().Then(e =>
+            {
+                Debug.Log(e);
+            });
         }
     }
 }

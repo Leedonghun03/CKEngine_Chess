@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class Pawn : Pieces
 {
     [Header("첫 이동 여부")]
-    [SerializeField] private bool hasMoved = false;
+    [SerializeField] internal bool hasMoved = false;
     
     [Header("이동 방향")]
     [SerializeField] private int dir;    

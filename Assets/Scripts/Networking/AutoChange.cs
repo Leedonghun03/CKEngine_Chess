@@ -9,6 +9,7 @@ public class AutoChange : MonoBehaviour {
         //MoveScene(s => s is GameLoginState, "LoginScene");
         MoveScene(s => s is GameLobbyState, "RoomListScene");
         MoveScene(s => s is GameRoomState, "RoomScene");
+        MoveScene(s => s is GameInState, "SampleScene");
     }
 
     void MoveScene(Predicate<GameState> predicate, string target) {

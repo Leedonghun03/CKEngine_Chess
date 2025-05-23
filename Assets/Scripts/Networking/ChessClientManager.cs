@@ -21,7 +21,11 @@ public static class ChessClientManager {
                 _client.Logger.OnLogging -= OnLog;
                 _client.Dispose();
                 _client = new ChessClient(_host);
+#if UNITY_EDITOR
                 _client.Logger.MinLevel = LogLevel.TRACE;
+#else
+                _client.Logger.MinLevel = LogLevel.INFO;
+#endif
                 _client.Logger.OnLogging += OnLog;
                 _client.Start();
             }
