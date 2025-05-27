@@ -95,11 +95,9 @@ public class Board : MonoBehaviour
             pieces.boardPosition = gridPos; 
         }
     }
-
-    // To-do : 공격 받고 있던 기물 이동시 공격중인 기물 공격 가능 범위 업데이트,
-    //         그리고 이동한 기물이 팀 기물의 공격 경로를 막고 있었다면 그 부분도 다시 업데이트,
-    //         이동한 곳이 공격 받던 곳이면 공격중인 기물의 공격 범위 다시 업데이트
-    //         총 3가지 업데이트 필요
+    
+    // 이동한 기물이 oldPiecesPos에서 newPiecesPos로 이동할 때
+    // 관련된 공격 범위 맵을 일괄 업데이트하는 함수
     public void UpdateAttackMaps(Pieces movePieces, Vector2Int oldPiecesPos, Vector2Int newPiecesPos)
     {
         movePieces.boardPosition = oldPiecesPos;
@@ -115,8 +113,9 @@ public class Board : MonoBehaviour
         }
     }
     
-    // 공격을 당하고 있던 체스 말이 이동하면 pivotPos 위치 기준으로 8 방향 탐색한다.
-    // 공격하고 있는 체스 말을 새롭게 다시 공격 범위 Update 및 팀원도 해준다.
+    // pivotPos 위치에서 dir(allDirections) 방향으로 탐색 후
+    // 첫 번째로 만난 기물의 공격 범위를 제거 후 다시 추가 갱신합니다.
+    // 즉, 이동으로 인해 막혔거나 열렸던 공격 경로를 다시 재계산하는 함수
     private void RefreshAttackMap(Vector2Int pivotPos, Vector2Int dir)
     {
         Vector2Int scan = pivotPos + dir;
@@ -135,7 +134,8 @@ public class Board : MonoBehaviour
         }
     }
     
-    // 기물 공격 위치를 담아두기 위한 함수
+    // 전달된 기물이 공격할 수 있는 모든 칸에 대해
+    // 해당 팀의 공격 맵에 추가(add=true)하거나 제거(add=false)하는 함수
     public void UpdateAttackCoverageAt(Pieces pieces, bool add)
     {
         List<Pieces>[,] attackMap = pieces.team == TeamColor.White ? whiteAttackMap : blackAttackMap;
