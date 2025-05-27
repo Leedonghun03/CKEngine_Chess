@@ -1,10 +1,13 @@
+using EndoAshu.Chess.Client.State;
+using EndoAshu.Chess.InGame;
+using Runetide.Util;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     [Header("플레이어 입력 핸들러")]
     [SerializeField] private PlayerInputHandler input;
-    
+
     [Header("이동, 회전 속도")]
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] private float turnSpeed = 15.0f;
@@ -12,7 +15,15 @@ public class PlayerController : MonoBehaviour
     [Header("잡기, 놓기 설정")]
     [SerializeField] private Transform holdPoint; // 플레이어 머리 위 빈 오브젝트
     [SerializeField] private float rayDistance = 0.5f;
-    private ILiftAble heldLiftAble;
+
+    private bool IsHeld {
+        get
+        {
+            var b = ChessClientManager.UnsafeClient?.CurrentRoom.PlayingData;
+            if (b == null) return false;
+            return b.HeldTarget.Item1 >= 0 && b.HeldTarget.Item1 < 8 && b.HeldTarget.Item2 >= 0 & b.HeldTarget.Item2 < 8;
+        }
+    }
 
     private void Awake()
     {
@@ -55,7 +66,7 @@ public class PlayerController : MonoBehaviour
     private void HandleInteraction()
     {
         // 이미 들고 있다면 -> 놓기
-        if (heldLiftAble != null)
+        if (IsHeld)
         {
             PlaceHeldPiece();
         }
@@ -74,26 +85,66 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(origin, forward, out RaycastHit hit, rayDistance))
         {
-            heldLiftAble = hit.collider.GetComponent<ILiftAble>();
+            var heldLiftAble = hit.collider.GetComponent<ILiftAble>();
 
             if (heldLiftAble == null)
             {
                 return;
             }
-            
-            heldLiftAble.LiftToParent(holdPoint);
+
+            if (heldLiftAble is Pieces pieces)
+            {
+                if (ChessClientManager.UnsafeClient?.State is GameInState gi)
+                {
+                    gi.PawnHeld(pieces.boardPosition.x, pieces.boardPosition.y).Then((e) =>
+                    {
+                        //Debug.Log($"Held {e.Commander}, {e.TargetX}, {e.TargetY}");
+                        if (e.TargetX >= 0 && e.TargetX < 8 && e.TargetY >= 0 && e.TargetY < 8)
+                        {
+                            Board board = GameObject.Find("Chessboard").GetComponent<Board>();
+                            var piece = board.GetPiece(new Vector2Int(e.TargetX, e.TargetY));
+                            piece.LiftToParent(holdPoint);
+                        }
+                    }).Catch(e =>
+                    {
+                        Debug.LogError(e);
+                    });
+                }
+            }
         }
     }
     
     // 체스말 내려놓기
     void PlaceHeldPiece()
     {
-        // 월드에 다시 놓을 월드 위치 계산 (플레이어 앞 rayDistance 만큼)
-        Vector3 dropWorldPos = holdPoint.position + transform.forward * rayDistance;           
-        
-        if (heldLiftAble.TryPlaceOnBoard(dropWorldPos))
+        // 월드에 다시 놓을 월드 위치 계산 (플레이어 앞 1유닛)
+        Vector3 dropWorldPos = holdPoint.position + transform.forward * 1.0f;
+        Board board = GameObject.Find("Chessboard").GetComponent<Board>();
+
+        var b = ChessClientManager.UnsafeClient?.CurrentRoom.PlayingData;
+        if (b == null) return;
+        var piece = board.GetPiece(new Vector2Int(b.HeldTarget.Item1, b.HeldTarget.Item2));
+
+        if (piece.IsCanPlaceOnBoard(dropWorldPos, out Vector2Int pos))
         {
-            heldLiftAble = null;
+
+            if (ChessClientManager.UnsafeClient?.State is GameInState gi)
+            {
+                gi.PawnPlace(pos.x, pos.y).Then((e) =>
+                {
+                   // Debug.Log($"Place {e.Commander}, {e.TargetX}, {e.TargetY}");
+                    if (e.TargetX >= 0 && e.TargetX < 8 && e.TargetY >= 0 && e.TargetY < 8)
+                    {
+                        Board board = GameObject.Find("Chessboard").GetComponent<Board>();
+                        var piece = board.GetPiece(new Vector2Int(e.TargetX, e.TargetY));
+                        piece.TryPlaceOnBoard(dropWorldPos);
+
+                        ChessClientManager.UnsafeClient?.CurrentRoom.PlayingData.MarkDirty();
+                    }
+                }).Catch(e => {
+                    Debug.LogError(e);
+                });
+            }
         }
     }
 }

@@ -51,12 +51,24 @@ public class Pieces : MonoBehaviour, ILiftAble
         indicatorManager.ShowMoveIndicator(chessBoard, legalMoves);
     }
 
+    public bool IsCanPlaceOnBoard(Vector3 dropWorldPosition, out Vector2Int boardPos)
+    {
+        boardPos = chessBoard.WorldToGridPosition(dropWorldPosition);
+        if (boardPos == boardPosition)
+            return true;
+        if (legalMoves == null || !legalMoves.Contains(boardPos))
+        {
+            return false;
+        }
+        return true;
+    }
+
     // 캐릭터가 체스 말 내려 놓는 부분
     public bool TryPlaceOnBoard(Vector3 dropWorldPosition)
     {
         // worldPosition에서 gridPosition으로 변경
         Vector2Int dropGridPosition = chessBoard.WorldToGridPosition(dropWorldPosition);
-        
+
         // 자기 자신 자리에 내려놓을 때
         // 서버에서는 턴을 안넘기는 처리 필요
         if (dropGridPosition == boardPosition)
@@ -67,11 +79,6 @@ public class Pieces : MonoBehaviour, ILiftAble
             return true;
         }
 
-        if (legalMoves == null || !legalMoves.Contains(dropGridPosition))
-        {
-            return false;
-        }
-        
         PerformMove(dropGridPosition);
         indicatorManager.ClearMoveIndicator();
         legalMoves = null;

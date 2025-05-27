@@ -35,6 +35,7 @@ public class MoveIndicatorManager : MonoBehaviour
 
         foreach (Vector2Int gridPos in position)
         {
+            Debug.Log($"MoveAble : ({gridPos.x}, {gridPos.y})");
             if (moveIndicatorObjectPool.Count == 0)
             {
                 Initialize(5);

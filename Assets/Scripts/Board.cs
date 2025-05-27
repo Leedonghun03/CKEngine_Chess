@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Board : MonoBehaviour
 {
     [Header("월드에서 체스 말들 간격")]
-    private readonly float cellWorldSize = 1.25f;
+    internal readonly float cellWorldSize = 1.25f;
 
     // 체스판 크기, 배열
     private const int gridSize = 8;
@@ -15,6 +15,9 @@ public class Board : MonoBehaviour
     // 각 팀의 기물들이 공격 가능한 위치 (체크메이트 or 캐슬링 판별)
     public readonly List<Pieces>[,] whiteAttackMap = new List<Pieces>[gridSize, gridSize];
     public readonly List<Pieces>[,] blackAttackMap = new List<Pieces>[gridSize, gridSize];
+
+    //동기화 때 배치 제외할 것
+    public Vector2Int heldPosition = -Vector2Int.one; 
     
     // 8방향 벡터를 한 번만 생성해 두는 static 필드
     private readonly Vector2Int[] allDirections = {
