@@ -1,3 +1,4 @@
+using System.Linq;
 using EndoAshu.Chess.Client.State;
 using EndoAshu.Chess.InGame;
 using Runetide.Util;
@@ -25,9 +26,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
     private void Awake()
     {
         input = GetComponent<PlayerInputHandler>();
+
+        GetComponent<PlayerMoveController>().InitWhois(ChessClientManager.UnsafeClient?.Account.UniqueId);
+
+        moveCache = transform.position;
     }
 
     private void Update()
@@ -37,29 +43,41 @@ public class PlayerController : MonoBehaviour
         {
             HandleMovement();
         }
-        
+
         // PickTriggered가 true이면 체스말 들기 or 놓기 로직 작동
         if (input.pickTriggered)
         {
             HandleInteraction();
         }
-        
+
         // 체스말 들기 or 놓기 사용하는 Ray 보기 위한 Debug 
         Debug.DrawRay(transform.position + Vector3.up, transform.forward, Color.red);
+
+        moveTicks -= Time.deltaTime;
+
+        if (moveTicks <= 0.0f && (moveCache - transform.position).sqrMagnitude > 0.01f)
+        {
+            if (ChessClientManager.UnsafeClient?.State is GameInState gis)
+            {
+                moveTicks = 0.05f;
+                gis.SendGhostMove((moveCache.x, moveCache.y, moveCache.z), (latestMoveVector.x, 0, latestMoveVector.y));
+            }
+        }
     }
-    
+
+    //일정 주기마다 보내기 위함.
+    Vector3 moveCache;
+    Vector2 latestMoveVector = Vector2.zero;
+    float moveTicks = 0.0f;
+
     // 플레이어 wasd 입력으로 이동
     private void HandleMovement()
     {
-        Vector2 move = input.moveVector;
+        bool reverse = ChessClientManager.UnsafeClient?.CurrentRoom?.Members
+            .FirstOrDefault(e => e.Id == ChessClientManager.Client.Account.UniqueId)?.Mode == EndoAshu.Chess.Room.PlayerMode.TEAM2;
+        Vector2 move = latestMoveVector = reverse ? -input.moveVector : input.moveVector;
         Vector3 moveDir = new Vector3(move.x, 0.0f, move.y);
-
-        transform.Translate(moveDir * (moveSpeed * Time.deltaTime), Space.World);
-
-        if (moveDir.magnitude > 0.0f)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDir, transform.up), turnSpeed * Time.deltaTime);
-        }
+        moveCache += moveDir * (moveSpeed * Time.deltaTime);
     }
 
     // 플레이어 space바 입력

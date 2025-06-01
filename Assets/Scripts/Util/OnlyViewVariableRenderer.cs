@@ -1,3 +1,5 @@
+#if UNITY_EDITOR
+
 using UnityEditor;
 using UnityEngine;
 
@@ -30,6 +32,8 @@ public class OnlyViewVariableRenderer : PropertyDrawer
                 break;
         }
 
-        EditorGUI.LabelField(position,label.text, valueStr);
+        EditorGUI.LabelField(position, label.text, valueStr);
     }
 }
+
+#endif
