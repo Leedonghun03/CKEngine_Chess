@@ -5,6 +5,9 @@ public class Pawn : Pieces
 {
     [Header("첫 이동 여부")]
     [SerializeField] internal bool hasMoved = false;
+
+    [Header("프로모션 여부 *true일 경우 웬만해서는 timeout임")]
+    [SerializeField] internal bool isPromoted = false;
     
     [Header("이동 방향")]
     [SerializeField] private int dir;    
