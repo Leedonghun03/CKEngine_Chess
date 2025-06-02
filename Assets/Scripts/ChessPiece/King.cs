@@ -111,7 +111,7 @@ public class King : Pieces
         {
             int x = boardPosition.x + dir * i;
             
-            if (enemyAttackMap[x, boardPosition.y] != null)
+            if (enemyAttackMap[x, boardPosition.y].Count > 0)
             {
                 return false;
             }

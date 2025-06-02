@@ -145,15 +145,19 @@ public class PlayerController : MonoBehaviour
 
         if (piece.IsCanPlaceOnBoard(dropWorldPos, out Vector2Int pos))
         {
-
             if (ChessClientManager.UnsafeClient?.State is GameInState gi)
             {
+                var i = b.HeldTarget;
+                int x = i.Item1;
+                int y = i.Item2;
+
                 gi.PawnPlace(pos.x, pos.y).Then((e) =>
                 {
                     if (e.TargetX >= 0 && e.TargetX < 8 && e.TargetY >= 0 && e.TargetY < 8)
                     {
                         Board board = GameObject.Find("Chessboard").GetComponent<Board>();
                         var piece = board.GetPiece(new Vector2Int(e.TargetX, e.TargetY));
+                        piece.boardPosition = new Vector2Int(x, y);
                         piece.TryPlaceOnBoard(dropWorldPos);
 
                         ChessClientManager.UnsafeClient?.CurrentRoom.PlayingData.MarkDirty();

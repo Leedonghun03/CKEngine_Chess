@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -15,6 +14,11 @@ public class Board : MonoBehaviour
     // 각 팀의 기물들이 공격 가능한 위치 (체크메이트 or 캐슬링 판별)
     public readonly List<Pieces>[,] whiteAttackMap = new List<Pieces>[gridSize, gridSize];
     public readonly List<Pieces>[,] blackAttackMap = new List<Pieces>[gridSize, gridSize];
+
+    // 앙파상 취약 좌표
+    public int enPassantVulnerableX;
+    public int enPassantVulnerableY;
+    public bool hasEnPassantVulnerable = false;
 
     //동기화 때 배치 제외할 것
     public Vector2Int heldPosition = -Vector2Int.one; 
