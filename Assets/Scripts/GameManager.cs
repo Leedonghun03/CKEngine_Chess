@@ -112,6 +112,7 @@ public class GameManager : MonoBehaviour
             Camera_Team_1.gameObject.SetActive(!isTeam2);
             Camera_Team_2.gameObject.SetActive(isTeam2);
 
+            //Room의 PlayingData가 변경되었는지 확인
             if (room.PlayingData.InstanceId != beforeUUID)
             {
                 beforeUUID = room.PlayingData.InstanceId;
@@ -131,20 +132,28 @@ public class GameManager : MonoBehaviour
                     piece.gameObject.SetActive(false);
                 }
 
+                //PlayingData의 데이터에 맞게 동기화 작업
                 for (int x = 0; x < 8; ++x)
                 {
                     for (int y = 0; y < 8; ++y)
                     {
                         Vector2Int pos = new Vector2Int(x, y);
+                        //현재 누가 들고있는건 굳이 렌더링해줄 필요는 없음
                         if (chessBoard.heldPosition == pos) continue;
 
                         var pawn = room.PlayingData.Board[x, y];
                         if (pawn == null) continue;
+                        //쓰레기통에서 찾아서 배치
                         var piece = CreateFromTrasnCan(pawn.PawnColor, pawn.PawnType, pos.x, pos.y);
 
-                        if (piece is Pawn gamePawn && pawn is EndoAshu.Chess.InGame.Pieces.Pawn inPawn)
+                        //필드 동기화
+                        if (piece is Pawn gamePawn)
                         {
-                            gamePawn.hasMoved = inPawn.HasMoved;
+                            if (pawn is EndoAshu.Chess.InGame.Pieces.Pawn inPawn)
+                            {
+                                gamePawn.isPromoted = inPawn.IsPromoted;
+                            }
+                            gamePawn.hasMoved = pawn.HasMoved;
                         }
 
                         chessBoard.SetPiece(piece, pos);

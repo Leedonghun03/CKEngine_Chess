@@ -150,7 +150,6 @@ public class PlayerController : MonoBehaviour
             {
                 gi.PawnPlace(pos.x, pos.y).Then((e) =>
                 {
-                   // Debug.Log($"Place {e.Commander}, {e.TargetX}, {e.TargetY}");
                     if (e.TargetX >= 0 && e.TargetX < 8 && e.TargetY >= 0 && e.TargetY < 8)
                     {
                         Board board = GameObject.Find("Chessboard").GetComponent<Board>();
@@ -158,8 +157,26 @@ public class PlayerController : MonoBehaviour
                         piece.TryPlaceOnBoard(dropWorldPos);
 
                         ChessClientManager.UnsafeClient?.CurrentRoom.PlayingData.MarkDirty();
+
+                        if (
+                            (piece.team == TeamColor.White && e.TargetY == 7)
+                            || (piece.team == TeamColor.Black && e.TargetY == 0)
+                        )
+                        {
+                            if (ChessClientManager.UnsafeClient?.State is GameInState gi)
+                            {
+                                /*gi.PawnPromote(EndoAshu.Chess.InGame.Pieces.ChessPawn.TypeId.QUEEN).Then(e =>
+                                {
+                                    ChessClientManager.Client.Logger.Info($"{e.Result} - {e.PromoteType}");
+                                }).Catch(e =>
+                                {
+                                    ChessClientManager.Client.Logger.Error(e.ToString());
+                                });*/
+                            }
+                        }
                     }
-                }).Catch(e => {
+                }).Catch(e =>
+                {
                     Debug.LogError(e);
                 });
             }
