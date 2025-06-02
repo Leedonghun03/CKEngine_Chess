@@ -42,6 +42,9 @@ public class LoginBtnBehaviour : MonoBehaviour {
                         case LoginPacket.LoginStatus.FAILED:
                             errorText.text = "Login Failed... Check for ID or Password.";
                             break;
+                        case LoginPacket.LoginStatus.PROTOCOL_MISMATCH:
+                            errorText.text = "Login Failed... Check for Game Version!";
+                            break;
                         case LoginPacket.LoginStatus.TIMEOUT:
                             errorText.text = "Server is Maintenance!";
                             break;
@@ -68,7 +71,7 @@ public class LoginBtnBehaviour : MonoBehaviour {
         Task.Run(async() => {
             try {
                 var res = await (ChessClientManager.Client.State as GameLoginState)!.Login(inputID, inputPW, 5000);
-                LoginResponse?.SetResult(LoginPacket.LoginStatus.SUCCESS);
+                LoginResponse?.SetResult(res);
             } catch {
                 LoginResponse?.SetResult(LoginPacket.LoginStatus.TIMEOUT);
             }

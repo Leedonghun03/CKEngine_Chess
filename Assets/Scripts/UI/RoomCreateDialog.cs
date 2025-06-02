@@ -42,7 +42,7 @@ public class RoomCreateDialog : MonoBehaviour
         if (nameField.text.Length >= 2) {
             Debug.Log(ChessClientManager.UnsafeClient?.State);
             if (ChessClientManager.UnsafeClient?.State is GameLobbyState ls) {
-                //ChessClientManager.UnsafeClient?.Se nd(new ClientSideRoomCreatePacket.Request(opt));
+                //ChessClientManager.UnsafeClient?.Send(new ClientSideRoomCreatePacket.Request(opt));
                 //ls.IUnderstandThisMethodIsNotRecommendButWantResetRoomCreateResponse();
                 ls.CreateRoom(opt, 3000).Then((stat) => {
                     var status = stat.Item1;
