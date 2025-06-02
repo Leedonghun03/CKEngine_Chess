@@ -18,7 +18,7 @@ public class Pieces : MonoBehaviour, ILiftAble
     
     [Header("보드상 체스 말 위치")]
     public Vector2Int boardPosition;
-    public Vector3 originalPosition;
+    public Vector3 worldPosition;
     
     [Header("체스 말 이동 가능 위치")]
     [SerializeField] private List<Vector2Int> legalMoves;
@@ -43,7 +43,7 @@ public class Pieces : MonoBehaviour, ILiftAble
     // 캐릭터 hold pos로 옮기는 부분
     public void LiftToParent(Transform parent)
     {
-        originalPosition = transform.position;
+        worldPosition = transform.position;
         transform.position = Vector3.zero;
         transform.SetParent(parent, false);
         
@@ -74,10 +74,13 @@ public class Pieces : MonoBehaviour, ILiftAble
         if (dropGridPosition == boardPosition)
         {
             transform.SetParent(chessBoard.transform, false);
-            transform.position = originalPosition;
+            transform.position = worldPosition;
             indicatorManager.ClearMoveIndicator();
+            legalMoves = null;
             return true;
         }
+        
+        chessBoard.hasEnPassantVulnerable = false;
 
         PerformMove(dropGridPosition);
         indicatorManager.ClearMoveIndicator();
