@@ -114,6 +114,12 @@ public class Pawn : Pieces
         }
         
         base.PerformMove(dropGridPosition);
+
+        bool isPromotionRank = (team == TeamColor.White && dropGridPosition.y == 7) ||  (team == TeamColor.Black && dropGridPosition.y == 0);
+        if (isPromotionRank)
+        {
+            chessBoard.ShowPawnPromotionUI(this);
+        }
         
         if (!hasMoved)
         {

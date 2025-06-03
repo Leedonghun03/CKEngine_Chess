@@ -1,5 +1,7 @@
 using UnityEngine;
+using Runetide.Util;
 using System.Collections.Generic;
+using EndoAshu.Chess.Client.State;
 
 public class Board : MonoBehaviour
 {
@@ -22,6 +24,11 @@ public class Board : MonoBehaviour
 
     //동기화 때 배치 제외할 것
     public Vector2Int heldPosition = -Vector2Int.one; 
+
+    // Pawn 승급 UI 오브젝트
+    [SerializeField] private GameObject pawnPromotionUI;
+    private PromotionUIButton promotionUIButton;
+    private Pieces currentPawnToPromote;
     
     // 8방향 벡터를 한 번만 생성해 두는 static 필드
     private readonly Vector2Int[] allDirections = {
@@ -44,6 +51,22 @@ public class Board : MonoBehaviour
                 whiteAttackMap[x, y] = new List<Pieces>();
                 blackAttackMap[x, y] = new List<Pieces>();
             }
+        }
+        
+        pawnPromotionUI.SetActive(false);
+        
+        promotionUIButton = pawnPromotionUI.GetComponent<PromotionUIButton>();
+        if (promotionUIButton)
+        {
+            promotionUIButton.OnPromotionSelected += OnPromotionSelected;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (promotionUIButton)
+        {
+            promotionUIButton.OnPromotionSelected -= OnPromotionSelected;
         }
     }
 
@@ -165,6 +188,48 @@ public class Board : MonoBehaviour
                     attackMap[attackPos.x, attackPos.y].Remove(pieces);
                 }
             }
+        }
+    }
+
+    public void ShowPawnPromotionUI(Pieces pawn)
+    {
+        // UI 위치 변경
+        Vector3 UIPosition = new Vector3(pawn.transform.position.x, 3.0f, pawn.transform.position.z);
+        pawnPromotionUI.transform.position = UIPosition;
+        
+        // UI 팀에 따른 Rotation 변경
+        Vector3 rotationVal = pawn.team == TeamColor.White ? new Vector3(50, 0, 0) : new Vector3(50, 180, 0);
+        pawnPromotionUI.transform.rotation = Quaternion.Euler(rotationVal);
+        
+        currentPawnToPromote = pawn;
+        // UI 활성화
+        pawnPromotionUI.SetActive(true);
+    }
+
+    private void OnPromotionSelected(TypeId type)
+    {
+        PawnPromotion(currentPawnToPromote, type);
+        pawnPromotionUI.SetActive(false);
+        currentPawnToPromote = null;
+    }
+
+    private void PawnPromotion(Pieces pawn, TypeId type)
+    {
+        if (!pawn || type == TypeId.CANCELLED)
+        {
+            return;
+        }
+
+        if (ChessClientManager.UnsafeClient?.State is GameInState gi)
+        {
+            ChessClientManager.UnsafeClient?.CurrentRoom.PlayingData.MarkDirty();
+            gi.PawnPromote((EndoAshu.Chess.InGame.Pieces.ChessPawn.TypeId)type).Then(e =>
+            {
+                ChessClientManager.Client.Logger.Info($"{e.Result} - {e.PromoteType}");
+            }).Catch(e =>
+            {
+                ChessClientManager.Client.Logger.Error(e.ToString());
+            });
         }
     }
 }
