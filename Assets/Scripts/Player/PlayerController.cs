@@ -147,9 +147,9 @@ public class PlayerController : MonoBehaviour
         {
             if (ChessClientManager.UnsafeClient?.State is GameInState gi)
             {
-                var i = b.HeldTarget;
-                int x = i.Item1;
-                int y = i.Item2;
+                var heldPosition = b.HeldTarget;
+                int x = heldPosition.Item1;
+                int y = heldPosition.Item2;
 
                 gi.PawnPlace(pos.x, pos.y).Then((e) =>
                 {
@@ -161,23 +161,6 @@ public class PlayerController : MonoBehaviour
                         piece.TryPlaceOnBoard(dropWorldPos);
 
                         ChessClientManager.UnsafeClient?.CurrentRoom.PlayingData.MarkDirty();
-
-                        if (
-                            (piece.team == TeamColor.White && e.TargetY == 7)
-                            || (piece.team == TeamColor.Black && e.TargetY == 0)
-                        )
-                        {
-                            if (ChessClientManager.UnsafeClient?.State is GameInState gi)
-                            {
-                                /*gi.PawnPromote(EndoAshu.Chess.InGame.Pieces.ChessPawn.TypeId.QUEEN).Then(e =>
-                                {
-                                    ChessClientManager.Client.Logger.Info($"{e.Result} - {e.PromoteType}");
-                                }).Catch(e =>
-                                {
-                                    ChessClientManager.Client.Logger.Error(e.ToString());
-                                });*/
-                            }
-                        }
                     }
                 }).Catch(e =>
                 {
