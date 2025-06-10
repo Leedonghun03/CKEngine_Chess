@@ -57,6 +57,9 @@ public class GameManager : MonoBehaviour
     {
 
         var id = ChessClientManager.Client.Account.UniqueId;
+
+        int idx = 1;
+        
         foreach (var i in ChessClientManager.Client.CurrentRoom.Members)
         {
             PlayerMoveController pmc;
@@ -69,6 +72,7 @@ public class GameManager : MonoBehaviour
                 pmc = Instantiate(GhostNonControlPrefab, ghostParent).GetComponent<PlayerMoveController>();
             }
             pmc.InitWhois(i.Id);
+            pmc.transform.position = new Vector3(++idx * chessBoard.cellWorldSize, 0, 4 * chessBoard.cellWorldSize);
         }
         
         /*

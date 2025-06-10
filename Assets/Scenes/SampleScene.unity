@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &94306092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 94306093}
+  m_Layer: 0
+  m_Name: ChessPawnRemove
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &94306093
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94306092}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1769334, y: -1.9040862, z: -1.1813722}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &159505462
 Transform:
   m_ObjectHideFlags: 0
@@ -231,12 +262,12 @@ GameObject:
   - component: {fileID: 185232386}
   - component: {fileID: 188623906}
   - component: {fileID: 187657954}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GPVFX_Chessboard Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!23 &187657954
 MeshRenderer:
@@ -355,7 +386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 368717520}
   - component: {fileID: 368717521}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chessboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1464,6 +1495,60 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1134160052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1134160054}
+  - component: {fileID: 1134160053}
+  m_Layer: 0
+  m_Name: PawnRemoveDirector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1134160053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134160052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa8dc48a589fbf43ba16d331cf7ddb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chessBoard: {fileID: 368717521}
+  PawnPrefab: {fileID: 3580524028622420031, guid: abc5e43cc5305ac479c3238b38fce5ef, type: 3}
+  KnightPrefab: {fileID: 5615028515824491388, guid: 7d256fbbd43cd7f47be9fe48c313e08f, type: 3}
+  BishopPrefab: {fileID: 3724126445508502493, guid: 3fbb112c171bbf0498341e9ec9d7f445, type: 3}
+  RookPrefab: {fileID: 8145486859462399748, guid: 1e4032ac26907494f8bb03c59e61511e, type: 3}
+  QueenPrefab: {fileID: 1359172484852215352, guid: efb1ccc80d8fdbf439744f85111fea0e, type: 3}
+  KingPrefab: {fileID: 6957288713479499676, guid: 97fbb08f2757dff4db5cd549011cab7d, type: 3}
+  blackTeam: {fileID: 2100000, guid: 1c07c15202b7e4140ae7c51070ba8a4f, type: 2}
+  whiteTeam: {fileID: 2100000, guid: 84c194be9cd250b42b1f64ea4d42cf8c, type: 2}
+  efxTransform: {fileID: 94306093}
+--- !u!4 &1134160054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134160052}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1769334, y: -1.9040862, z: -1.1813722}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1154231660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1847,13 +1932,63 @@ GameObject:
   - component: {fileID: 1722440499}
   - component: {fileID: 1721637651}
   - component: {fileID: 1720670675}
-  m_Layer: 0
+  - component: {fileID: 1722664724}
+  - component: {fileID: 1722664725}
+  m_Layer: 8
   m_Name: GPVFX_Chessboard Base_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
+--- !u!65 &1722664724
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722664723}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 12.999823, y: 1.0348759, z: 12.999824}
+  m_Center: {x: 4.376296, y: -0.5224376, z: 4.3762965}
+--- !u!54 &1722664725
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722664723}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!33 &1833662473
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5113,3 +5248,5 @@ SceneRoots:
   - {fileID: 702916293}
   - {fileID: 2099272692}
   - {fileID: 1087182285}
+  - {fileID: 1134160054}
+  - {fileID: 94306093}
