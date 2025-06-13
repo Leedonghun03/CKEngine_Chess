@@ -6,6 +6,9 @@ public class King : Pieces
     [Header("첫 이동 여부")]
     [SerializeField] private bool hasMoved = false;
     
+    [Header("체크메이트 여부")]
+    public bool isCheckmate = false;
+    
     private readonly List<Vector2Int> offsets = new()
     {
         // 앞

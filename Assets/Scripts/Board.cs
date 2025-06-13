@@ -2,6 +2,7 @@ using UnityEngine;
 using Runetide.Util;
 using System.Collections.Generic;
 using EndoAshu.Chess.Client.State;
+using NUnit.Framework;
 
 public class Board : MonoBehaviour
 {
@@ -191,6 +192,7 @@ public class Board : MonoBehaviour
         }
     }
 
+    // Pawn 승급 UI 보이게 하는 부분
     public void ShowPawnPromotionUI(Pieces pawn)
     {
         // UI 위치 변경
@@ -206,6 +208,7 @@ public class Board : MonoBehaviour
         pawnPromotionUI.SetActive(true);
     }
 
+    // UI에서 누른 Button 타입을 받아오는 델리게이트 함수
     private void OnPromotionSelected(TypeId type)
     {
         PawnPromotion(currentPawnToPromote, type);
@@ -213,6 +216,7 @@ public class Board : MonoBehaviour
         currentPawnToPromote = null;
     }
 
+    // 실제 Pawn의 승급 처리는 이 함수에서 처리함
     private void PawnPromotion(Pieces pawn, TypeId type)
     {
         if (!pawn || type == TypeId.CANCELLED)
@@ -231,5 +235,62 @@ public class Board : MonoBehaviour
                 ChessClientManager.Client.Logger.Error(e.ToString());
             });
         }
+    }
+    
+    // ==== 체크메이트 관련 ====
+    // 킹 위치 찾는 함수
+    private Vector2Int FindKingPosition(TeamColor team)
+    {
+        for (int x = 0; x < 8; x++)
+        {
+            for (int y = 0; y < 8; y++)
+            {
+                Pieces piece = grid[x, y];
+
+                if (piece is King && piece.team == team)
+                {
+                    return new Vector2Int(x, y);
+                }
+            }
+        }
+
+        return new Vector2Int(-1, -1);
+    }
+    
+    // 같은 팀 King이 공격받고 있는 기물 목록을 반환하는 함수
+    public List<Pieces> IsKingCheck(TeamColor team)
+    {
+        // King의 좌표를 찾기
+        Vector2Int kingPos = FindKingPosition(team);
+        if (kingPos == new Vector2Int(-1, -1))
+        {
+            return new List<Pieces>();
+        }
+
+        List<Pieces>[,] enemyAttackMap = team == TeamColor.White ? blackAttackMap : whiteAttackMap;
+        return new List<Pieces>(enemyAttackMap[kingPos.x, kingPos.y]);
+    }
+    
+    // 특정 칸이 적의 공격 범위에 들어있는지 판단하는 함수
+    // 위의 주석 내용 작성할 위치
+    
+    public List<(Pieces pieces, Vector2Int dest)> GetLegalMovesForTeam(TeamColor team)
+    {
+        var legalMoves = new List<(Pieces, Vector2Int)>();
+
+        // 킹을 공격하고 있는 기물 목록
+        List<Pieces> attackers = IsKingCheck(team);
+        int attackerCount = attackers.Count;
+
+        // 더블 체크 처리 (공격자 2명 이상이)
+        if (attackerCount >= 2)
+        {
+        }
+
+        // 싱글 체크 처리
+        
+        // 노체크 또는 싱글 체크 처리
+        
+        return null;
     }
 }
