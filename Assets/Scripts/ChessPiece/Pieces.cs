@@ -29,12 +29,12 @@ public class Pieces : MonoBehaviour, ILiftAble
     
     public void Awake()
     {
-        if (chessBoard == null)
+        if (!chessBoard)
         {
             chessBoard = GameObject.Find("Chessboard").GetComponent<Board>();
         }
 
-        if (indicatorManager == null)
+        if (!indicatorManager)
         {
             indicatorManager = GameObject.Find("MoveIndicatorManager").GetComponent<MoveIndicatorManager>();
         }
@@ -88,7 +88,7 @@ public class Pieces : MonoBehaviour, ILiftAble
         return true;
     }
 
-    protected virtual List<Vector2Int> GetAvailableMoves() { return null; }
+    public virtual List<Vector2Int> GetAvailableMoves() { return null; }
     //pawn문 대각선 적 확인 하나 때문에 사용중임
     public virtual List<Vector2Int> GetAttackSquares() { return null; }
 
@@ -164,6 +164,9 @@ public class Pieces : MonoBehaviour, ILiftAble
         
         // 공격 맵 갱신
         chessBoard.UpdateAttackMaps(this, oldPiecesPos, dropGridPosition);
+        
+        // 상대 King 체크메이트 확인
+        chessBoard.IsCheckmate(this.team);
         
         // 그리드 좌표에서 월드 좌표로 스냅
         transform.SetParent(chessBoard.transform, false);

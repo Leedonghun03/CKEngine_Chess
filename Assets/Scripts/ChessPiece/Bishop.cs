@@ -13,7 +13,7 @@ public class Bishop : Pieces
         new Vector2Int(-1, -1),
     };
 
-    protected override List<Vector2Int> GetAvailableMoves()
+    public override List<Vector2Int> GetAvailableMoves()
     {
         return SlideMoves(offsets);
     }

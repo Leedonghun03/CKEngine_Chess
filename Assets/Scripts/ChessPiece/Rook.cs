@@ -19,7 +19,7 @@ public class Rook : Pieces
         new Vector2Int(1, 0),
     };
 
-    protected override List<Vector2Int> GetAvailableMoves()
+    public override List<Vector2Int> GetAvailableMoves()
     {
         return SlideMoves(offsets);
     }

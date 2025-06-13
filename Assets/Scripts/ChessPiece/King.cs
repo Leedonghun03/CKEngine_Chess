@@ -6,9 +6,6 @@ public class King : Pieces
     [Header("첫 이동 여부")]
     [SerializeField] private bool hasMoved = false;
     
-    [Header("체크메이트 여부")]
-    public bool isCheckmate = false;
-    
     private readonly List<Vector2Int> offsets = new()
     {
         // 앞
@@ -34,10 +31,35 @@ public class King : Pieces
         new Vector2Int(-2, 0),
     };
 
-    protected override List<Vector2Int> GetAvailableMoves()
+    public override List<Vector2Int> GetAvailableMoves()
     {
-        List<Vector2Int> moves = LeaperMoves(offsets);
+        List<Vector2Int> moves = new();
+        List<Pieces>[,] enemyAttackMap = team == TeamColor.White ? chessBoard.blackAttackMap : chessBoard.whiteAttackMap;
+        
+        foreach (var moveOffset in offsets)
+        {
+            Vector2Int dest = boardPosition + moveOffset;
 
+            if (!chessBoard.IsInside(dest))
+            {
+                continue;
+            }
+            if (enemyAttackMap[dest.x, dest.y].Count > 0)
+            {
+                continue;
+            }
+            
+            Pieces target = chessBoard.GetPiece(dest);
+            if (!target)
+            {
+                moves.Add(dest);
+            }
+            else if (target && target.team != this.team)
+            {
+                moves.Add(dest);
+            }
+        }
+        
         if (!hasMoved)
         {
             foreach (var castlingOffset in castlingOffsets)
@@ -54,7 +76,17 @@ public class King : Pieces
     
     public override List<Vector2Int> GetAttackSquares()
     {
-        return GetAvailableMoves();
+        List<Vector2Int> squares = new();
+        foreach (Vector2Int offset in offsets)
+        {
+            Vector2Int pos = boardPosition + offset;
+            if (chessBoard.IsInside(pos))
+            {
+                squares.Add(pos);
+            }
+        }
+
+        return squares;
     }
     
     protected override void PerformMove(Vector2Int dropGridPosition)

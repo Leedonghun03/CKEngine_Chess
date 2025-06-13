@@ -55,7 +55,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-
         var id = ChessClientManager.Client.Account.UniqueId;
 
         int idx = 1;
@@ -74,7 +73,6 @@ public class GameManager : MonoBehaviour
             pmc.InitWhois(i.Id);
             pmc.transform.position = new Vector3(++idx * chessBoard.cellWorldSize, 0, 4 * chessBoard.cellWorldSize);
         }
-        
         /*
         // 씬에 배치된 모든 Pieces를 찾아서 보드에 세팅하는 작업
         foreach (var piece in FindObjectsByType<Pieces>(FindObjectsSortMode.None))
@@ -84,7 +82,7 @@ public class GameManager : MonoBehaviour
             // 보드에 등록하면 piece.boardPosition도 자동으로 세팅
             chessBoard.SetPiece(piece, gridPos);
         }
-        
+
         // 각 팀에 공격 가능한 위치 초기화
         // pawn, knight 외에는 pawn이 막고 있어서 공격 불가능
         foreach (var pawn in FindObjectsByType<Pawn>(FindObjectsSortMode.None))

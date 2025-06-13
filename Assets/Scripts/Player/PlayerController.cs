@@ -109,9 +109,12 @@ public class PlayerController : MonoBehaviour
             {
                 return;
             }
-
+            
             if (heldLiftAble is Pieces pieces)
             {
+                Board board = GameObject.Find("Chessboard").GetComponent<Board>();
+                if (board.checkmatePickableSet.Count > 0 && !board.checkmatePickableSet.Contains(pieces)) return;
+                
                 if (ChessClientManager.UnsafeClient?.State is GameInState gi)
                 {
                     gi.PawnHeld(pieces.boardPosition.x, pieces.boardPosition.y).Then((e) =>
@@ -119,7 +122,6 @@ public class PlayerController : MonoBehaviour
                         //Debug.Log($"Held {e.Commander}, {e.TargetX}, {e.TargetY}");
                         if (e.TargetX >= 0 && e.TargetX < 8 && e.TargetY >= 0 && e.TargetY < 8)
                         {
-                            Board board = GameObject.Find("Chessboard").GetComponent<Board>();
                             var piece = board.GetPiece(new Vector2Int(e.TargetX, e.TargetY));
                             piece.LiftToParent(holdPoint);
                         }
