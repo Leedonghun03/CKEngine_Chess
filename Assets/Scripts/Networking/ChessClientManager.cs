@@ -1,7 +1,12 @@
 using System;
+using System.Collections.Generic;
 using System.Net;
 using EndoAshu.Chess.Client;
+using EndoAshu.Chess.Client.InGame;
+using EndoAshu.Chess.InGame;
+using EndoAshu.Chess.Room;
 using EndoAshu.Chess.User;
+using Runetide.Packet;
 using Runetide.Util.Logging;
 using UnityEngine;
 
@@ -13,11 +18,19 @@ public static class ChessClientManager {
     public static ChessClient? UnsafeClient {
         get => _client.IsConnected ? _client : null;
     }
+
+    public static bool IsWinnerScene => GameEndData != null;
+
+    public static ClientSideChessGameEndPacket? GameEndData { get; set; }
 #nullable disable
 
-    public static ChessClient Client {
-        get {
-            if (!_client.IsConnected) {
+    public static ChessClient Client
+    {
+        get
+        {
+            if (!_client.IsConnected)
+            {
+                _client.RemoveOnReceivePacketListener(OnGameEnd);
                 _client.Logger.OnLogging -= OnLog;
                 _client.Dispose();
                 _client = new ChessClient(_host);
@@ -27,9 +40,18 @@ public static class ChessClientManager {
                 _client.Logger.MinLevel = LogLevel.INFO;
 #endif
                 _client.Logger.OnLogging += OnLog;
+                _client.AddOnReceivePacketListener(OnGameEnd);
                 _client.Start();
             }
             return _client;
+        }
+    }
+
+    private static void OnGameEnd(IPacket t)
+    {
+        if (t is ClientSideChessGameEndPacket pk)
+        {
+            GameEndData = pk;
         }
     }
 
