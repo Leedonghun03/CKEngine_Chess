@@ -47,7 +47,7 @@ public class Pieces : MonoBehaviour, ILiftAble
         transform.position = Vector3.zero;
         transform.SetParent(parent, false);
         
-        legalMoves = GetAvailableMoves();
+        legalMoves = chessBoard.TryGetCachedMoves(this);
         indicatorManager.ShowMoveIndicator(chessBoard, legalMoves);
     }
 
@@ -166,7 +166,7 @@ public class Pieces : MonoBehaviour, ILiftAble
         chessBoard.UpdateAttackMaps(this, oldPiecesPos, dropGridPosition);
         
         // 상대 King 체크메이트 확인
-        chessBoard.IsCheckmate(this.team);
+        chessBoard.EvaluateCheckmate(this.team);
         
         // 그리드 좌표에서 월드 좌표로 스냅
         transform.SetParent(chessBoard.transform, false);

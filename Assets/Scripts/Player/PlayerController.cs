@@ -113,7 +113,14 @@ public class PlayerController : MonoBehaviour
             if (heldLiftAble is Pieces pieces)
             {
                 Board board = GameObject.Find("Chessboard").GetComponent<Board>();
-                if (board.checkmatePickableSet.Count > 0 && !board.checkmatePickableSet.Contains(pieces)) return;
+
+                if (board.playState == Board.BoardPlayState.CheckMate ||
+                    board.playState == Board.BoardPlayState.Stalemate)
+                    return;
+                
+                // 집을 수 있는 기물셋이 비어있다면 && 포함이 안되어 있다면 return
+                if (board.playState == Board.BoardPlayState.Check && !board.canGrabPieceSet.Contains(pieces))
+                    return;
                 
                 if (ChessClientManager.UnsafeClient?.State is GameInState gi)
                 {
