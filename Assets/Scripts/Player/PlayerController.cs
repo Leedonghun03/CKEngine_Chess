@@ -161,8 +161,6 @@ public class PlayerController : MonoBehaviour
                 int x = heldPosition.Item1;
                 int y = heldPosition.Item2;
 
-                bool currNormalState = board.playState == Board.BoardPlayState.Normal || board.playState == Board.BoardPlayState.Check;
-
                 gi.PawnPlace(pos.x, pos.y).Then((e) =>
                 {
                     if (e.TargetX >= 0 && e.TargetX < 8 && e.TargetY >= 0 && e.TargetY < 8)
@@ -171,34 +169,6 @@ public class PlayerController : MonoBehaviour
                         var piece = board.GetPiece(new Vector2Int(e.TargetX, e.TargetY));
                         piece.boardPosition = new Vector2Int(x, y);
                         piece.TryPlaceOnBoard(dropWorldPos);
-
-                        ChessClientManager.UnsafeClient?.CurrentRoom.PlayingData.MarkDirty();
-
-                        if (currNormalState)
-                        {
-                            if (board.playState == Board.BoardPlayState.Stalemate)
-                            {
-                                ChessClientManager.UnsafeClient?.Send(
-                                    new ClientSideChessGameCheckmatePacket(
-                                        ClientSideChessGameCheckmatePacket.ResultCode.STALEMATE,
-                                        piece.team == TeamColor.Black
-                                            ? EndoAshu.Chess.InGame.Pieces.ChessPawn.Color.BLACK
-                                            : EndoAshu.Chess.InGame.Pieces.ChessPawn.Color.WHITE
-                                    )
-                                );
-                            }
-                            else if (board.playState == Board.BoardPlayState.CheckMate)
-                            {
-                                ChessClientManager.UnsafeClient?.Send(
-                                    new ClientSideChessGameCheckmatePacket(
-                                        ClientSideChessGameCheckmatePacket.ResultCode.CHECKMATE,
-                                        piece.team == TeamColor.Black
-                                            ? EndoAshu.Chess.InGame.Pieces.ChessPawn.Color.BLACK
-                                            : EndoAshu.Chess.InGame.Pieces.ChessPawn.Color.WHITE
-                                    )
-                                );
-                            }
-                        }
                     }
                 }).Catch(e =>
                 {

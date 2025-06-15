@@ -325,7 +325,7 @@ public class Board : MonoBehaviour
         // 킹을 공격하고 있는 기물 목록
         List<Pieces> attackers = GetKingAttackers(team);
         int attackerCount = attackers.Count; // 0 : 안전, 1 : 싱글 체크, 2이상 : 더블체크
-        
+
         if (attackerCount == 0)
         {
             playState = BoardPlayState.Normal;
