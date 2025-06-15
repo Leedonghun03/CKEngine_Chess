@@ -159,7 +159,6 @@ public class King : Pieces
     private void ExecuteCastle(Vector2Int offset)
     {
         // === 킹 이동 ===
-        Vector2Int oldKingPos = boardPosition;
         Vector2Int newKingPos = this.boardPosition + offset;
         hasMoved = true;
         
@@ -168,7 +167,7 @@ public class King : Pieces
         // === 룩 이동 ===
         int dir = (int)Mathf.Sign(offset.x);
         int rookPosX = dir > 0 ? 7 : 0;
-        int rookPosY = oldKingPos.y;
+        int rookPosY = team == TeamColor.White ? 0 : 7;
         
         Vector2Int oldRookPos = new Vector2Int(rookPosX, rookPosY);
         Vector2Int newRookPos = new Vector2Int(newKingPos.x - dir, rookPosY);
