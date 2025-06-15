@@ -51,7 +51,9 @@ public class RoomCreateDialog : MonoBehaviour
                     Debug.Log(uuid);
                     if (status == RoomCreatePacket.CreateStatus.SUCCESS || status == RoomCreatePacket.CreateStatus.ALREADY_INSIDE) {
                     } else {
-                        DialogManager.Current = new DialogManager.Instance("Failed", $"Failed to create room.\nReason : {status}", "Close", () => {});
+                        //TODO : 임시로 TIMEOUT 응답은 dialog 미표출 - 추후 버그 해결 시 제거
+                        if (status != RoomCreatePacket.CreateStatus.TIMEOUT)
+                            DialogManager.Current = new DialogManager.Instance("Failed", $"Failed to create room.\nReason : {status}", "Close", () => {});
                     }
                 });
             }

@@ -19,7 +19,7 @@ public class Knight : Pieces
         new Vector2Int(-2, -1)
     };
 
-    protected override List<Vector2Int> GetAvailableMoves()
+    public override List<Vector2Int> GetAvailableMoves()
     {
         return LeaperMoves(offsets);
     }

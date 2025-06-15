@@ -18,7 +18,7 @@ public class Pieces : MonoBehaviour, ILiftAble
     
     [Header("보드상 체스 말 위치")]
     public Vector2Int boardPosition;
-    public Vector3 originalPosition;
+    public Vector3 worldPosition;
     
     [Header("체스 말 이동 가능 위치")]
     [SerializeField] private List<Vector2Int> legalMoves;
@@ -29,12 +29,12 @@ public class Pieces : MonoBehaviour, ILiftAble
     
     public void Awake()
     {
-        if (chessBoard == null)
+        if (!chessBoard)
         {
             chessBoard = GameObject.Find("Chessboard").GetComponent<Board>();
         }
 
-        if (indicatorManager == null)
+        if (!indicatorManager)
         {
             indicatorManager = GameObject.Find("MoveIndicatorManager").GetComponent<MoveIndicatorManager>();
         }
@@ -43,12 +43,24 @@ public class Pieces : MonoBehaviour, ILiftAble
     // 캐릭터 hold pos로 옮기는 부분
     public void LiftToParent(Transform parent)
     {
-        originalPosition = transform.position;
+        worldPosition = transform.position;
         transform.position = Vector3.zero;
         transform.SetParent(parent, false);
         
-        legalMoves = GetAvailableMoves();
+        legalMoves = chessBoard.TryGetCachedMoves(this);
         indicatorManager.ShowMoveIndicator(chessBoard, legalMoves);
+    }
+
+    public bool IsCanPlaceOnBoard(Vector3 dropWorldPosition, out Vector2Int boardPos)
+    {
+        boardPos = chessBoard.WorldToGridPosition(dropWorldPosition);
+        if (boardPos == boardPosition)
+            return true;
+        if (legalMoves == null || !legalMoves.Contains(boardPos))
+        {
+            return false;
+        }
+        return true;
     }
 
     // 캐릭터가 체스 말 내려 놓는 부분
@@ -56,29 +68,27 @@ public class Pieces : MonoBehaviour, ILiftAble
     {
         // worldPosition에서 gridPosition으로 변경
         Vector2Int dropGridPosition = chessBoard.WorldToGridPosition(dropWorldPosition);
-        
+
         // 자기 자신 자리에 내려놓을 때
         // 서버에서는 턴을 안넘기는 처리 필요
         if (dropGridPosition == boardPosition)
         {
             transform.SetParent(chessBoard.transform, false);
-            transform.position = originalPosition;
+            transform.position = worldPosition;
             indicatorManager.ClearMoveIndicator();
+            legalMoves = null;
             return true;
         }
-
-        if (legalMoves == null || !legalMoves.Contains(dropGridPosition))
-        {
-            return false;
-        }
         
+        chessBoard.hasEnPassantVulnerable = false;
+
         PerformMove(dropGridPosition);
         indicatorManager.ClearMoveIndicator();
         legalMoves = null;
         return true;
     }
 
-    protected virtual List<Vector2Int> GetAvailableMoves() { return null; }
+    public virtual List<Vector2Int> GetAvailableMoves() { return null; }
     //pawn문 대각선 적 확인 하나 때문에 사용중임
     public virtual List<Vector2Int> GetAttackSquares() { return null; }
 
@@ -154,6 +164,9 @@ public class Pieces : MonoBehaviour, ILiftAble
         
         // 공격 맵 갱신
         chessBoard.UpdateAttackMaps(this, oldPiecesPos, dropGridPosition);
+        
+        // 상대 King 체크메이트 확인
+        chessBoard.EvaluateCheckmate(this.team);
         
         // 그리드 좌표에서 월드 좌표로 스냅
         transform.SetParent(chessBoard.transform, false);
