@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3548645333441454881}
   - component: {fileID: 5255603380836276744}
   - component: {fileID: 4067718107515249941}
+  - component: {fileID: 6826049227519218974}
   m_Layer: 7
   m_Name: Player_Control
   m_TagString: Untagged
@@ -169,6 +170,27 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &6826049227519218974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378968017901736149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae56a8ff111053842a1010c92dd1ccce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PawnPrefab: {fileID: 100000, guid: dab6c0dea21994386a57acc588faa9e5, type: 3}
+  KnightPrefab: {fileID: 100000, guid: 4b1b985d7c66d4cba91946bc280878ce, type: 3}
+  BishopPrefab: {fileID: 100000, guid: 3ebcae0daf8394e548da469833b04106, type: 3}
+  RookPrefab: {fileID: 100000, guid: c5f20314b232248d3972665d64a42a3e, type: 3}
+  QueenPrefab: {fileID: 100000, guid: 4ed40abe3301f47969aa44350488c7d0, type: 3}
+  KingPrefab: {fileID: 100000, guid: 9c7ba5185d28d475b902a82911b83e2c, type: 3}
+  Material_Team_1: {fileID: 2100000, guid: d09888fb380864d7d820ffed5c260deb, type: 2}
+  Material_Team_2: {fileID: 2100000, guid: ce80d7520e4604c6faaad086dc1a7590, type: 2}
+  heldSlot: {fileID: 5364061269105568649}
 --- !u!1 &477170956699995058
 GameObject:
   m_ObjectHideFlags: 0

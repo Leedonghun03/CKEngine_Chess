@@ -45,8 +45,9 @@ public class Pieces : MonoBehaviour, ILiftAble
     public void LiftToParent(Transform parent)
     {
         worldPosition = transform.position;
-        transform.position = Vector3.zero;
-        transform.SetParent(parent, false);
+        //transform.position = Vector3.zero;
+        //transform.SetParent(parent, false);
+        GetComponent<MeshRenderer>().enabled = false;
         
         legalMoves = chessBoard.TryGetCachedMoves(this);
         indicatorManager.ShowMoveIndicator(chessBoard, legalMoves);
@@ -69,6 +70,7 @@ public class Pieces : MonoBehaviour, ILiftAble
     {
         // worldPosition에서 gridPosition으로 변경
         Vector2Int dropGridPosition = chessBoard.WorldToGridPosition(dropWorldPosition);
+        GetComponent<MeshRenderer>().enabled = true;
 
         // 자기 자신 자리에 내려놓을 때
         // 서버에서는 턴을 안넘기는 처리 필요
