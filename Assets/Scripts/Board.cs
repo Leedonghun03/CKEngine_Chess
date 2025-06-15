@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using Runetide.Util;
 using System.Collections.Generic;
+using EndoAshu.Chess.Client.InGame;
 using EndoAshu.Chess.Client.State;
 
 public class Board : MonoBehaviour
@@ -284,9 +285,28 @@ public class Board : MonoBehaviour
         
         GetLegalMovesForTeam(nextMovedTeam);
 
-        if (playState == BoardPlayState.CheckMate)
+        // if (playState == BoardPlayState.CheckMate)
+        // {
+        //     
+        // }
+
+        var client = ChessClientManager.UnsafeClient;
+        if (playState == BoardPlayState.CheckMate && client?.State is GameInState gi)
         {
+            // moveedTeam이 이긴 쪽
+            var winnerColor = movedTeam == TeamColor.White 
+                ? EndoAshu.Chess.InGame.Pieces.ChessPawn.Color.WHITE
+                : EndoAshu.Chess.InGame.Pieces.ChessPawn.Color.BLACK;
             
+            client.Send(new ClientSideChessGameCheckmatePacket(
+                ClientSideChessGameCheckmatePacket.ResultCode.CHECKMATE,
+                winnerColor));
+        }
+        else if (playState == BoardPlayState.Stalemate && client?.State is GameInState gi2)
+        {
+            client.Send(new ClientSideChessGameCheckmatePacket(
+                ClientSideChessGameCheckmatePacket.ResultCode.STALEMATE,
+                EndoAshu.Chess.InGame.Pieces.ChessPawn.Color.WHITE));
         }
     }
     
@@ -305,7 +325,7 @@ public class Board : MonoBehaviour
         // 킹을 공격하고 있는 기물 목록
         List<Pieces> attackers = GetKingAttackers(team);
         int attackerCount = attackers.Count; // 0 : 안전, 1 : 싱글 체크, 2이상 : 더블체크
-        
+
         if (attackerCount == 0)
         {
             playState = BoardPlayState.Normal;
