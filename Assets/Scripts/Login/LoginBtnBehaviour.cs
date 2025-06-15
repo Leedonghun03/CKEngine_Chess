@@ -68,9 +68,11 @@ public class LoginBtnBehaviour : MonoBehaviour {
         }
         errorText.text = "";
         LoginResponse = new UnityTaskResult<LoginPacket.LoginStatus>();
-        Task.Run(async() => {
+        Task.Run(async () => {
             try {
-                var res = await (ChessClientManager.Client.State as GameLoginState)!.Login(inputID, inputPW, 5000);
+                var state = ChessClientManager.Client.State as GameLoginState;
+                state!.__InternalResetLogin();
+                var res = await state!.Login(inputID, inputPW, 5000);
                 LoginResponse?.SetResult(res);
             } catch {
                 LoginResponse?.SetResult(LoginPacket.LoginStatus.TIMEOUT);

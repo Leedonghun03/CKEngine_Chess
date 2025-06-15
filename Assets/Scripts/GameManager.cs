@@ -126,6 +126,10 @@ public class GameManager : MonoBehaviour
                 RoomMemberCount = room.GetMemberCount();
                 #endregion
 
+                chessBoard.enPassantVulnerableX = room.PlayingData.enPassantVulnerable.Item1;
+                chessBoard.enPassantVulnerableY = room.PlayingData.enPassantVulnerable.Item2;
+                chessBoard.hasEnPassantVulnerable = room.PlayingData.hasEnPassantVulnerable;
+
                 //Is Dirty
                 foreach (var piece in FindObjectsByType<Pieces>(FindObjectsSortMode.None))
                 {
