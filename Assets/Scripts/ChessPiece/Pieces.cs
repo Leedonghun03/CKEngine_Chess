@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Playables;
 
 public enum TeamColor
 {
@@ -161,13 +162,13 @@ public class Pieces : MonoBehaviour, ILiftAble
         Vector2Int oldPiecesPos = boardPosition;
         chessBoard.SetPiece(null, oldPiecesPos);
         chessBoard.SetPiece(this, dropGridPosition);
-        
+
         // 공격 맵 갱신
         chessBoard.UpdateAttackMaps(this, oldPiecesPos, dropGridPosition);
-        
+
         // 상대 King 체크메이트 확인
         chessBoard.EvaluateCheckmate(this.team);
-        
+
         // 그리드 좌표에서 월드 좌표로 스냅
         transform.SetParent(chessBoard.transform, false);
         transform.position = chessBoard.GridToWorldPosition(dropGridPosition);

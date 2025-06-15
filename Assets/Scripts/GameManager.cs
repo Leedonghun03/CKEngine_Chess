@@ -140,8 +140,6 @@ public class GameManager : MonoBehaviour
                     for (int y = 0; y < 8; ++y)
                     {
                         Vector2Int pos = new Vector2Int(x, y);
-                        //현재 누가 들고있는건 굳이 렌더링해줄 필요는 없음
-                        if (chessBoard.heldPosition == pos) continue;
 
                         var pawn = room.PlayingData.Board[x, y];
                         if (pawn == null) continue;
@@ -160,6 +158,11 @@ public class GameManager : MonoBehaviour
 
                         chessBoard.SetPiece(piece, pos);
                         chessBoard.UpdateAttackCoverageAt(piece, true);
+                        //현재 누가 들고있는건 굳이 렌더링해줄 필요는 없음
+                        if (chessBoard.heldPosition == pos)
+                        {
+                            piece.gameObject.SetActive(false);
+                        }
                     }
                 }
             }
