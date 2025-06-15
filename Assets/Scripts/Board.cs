@@ -469,7 +469,7 @@ public class Board : MonoBehaviour
     }
 
     // 전체 공격 앱을 초기화 후 재계산하는 함수
-    private void RebuildAttackMaps()
+    internal void RebuildAttackMaps()
     {
         for (int x = 0; x < gridSize; x++)
         {

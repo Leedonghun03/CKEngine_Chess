@@ -157,7 +157,6 @@ public class GameManager : MonoBehaviour
                         }
 
                         chessBoard.SetPiece(piece, pos);
-                        chessBoard.UpdateAttackCoverageAt(piece, true);
                         //현재 누가 들고있는건 굳이 렌더링해줄 필요는 없음
                         if (chessBoard.heldPosition == pos)
                         {
@@ -165,6 +164,8 @@ public class GameManager : MonoBehaviour
                         }
                     }
                 }
+                Debug.Log($"Current Player Held Pos : {chessBoard.heldPosition}");
+                chessBoard.RebuildAttackMaps();
             }
         }
     }
