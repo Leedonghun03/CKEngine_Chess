@@ -300,6 +300,7 @@ public class Board : MonoBehaviour
         // 킹을 공격하고 있는 기물 목록
         List<Pieces> attackers = GetKingAttackers(team);
         int attackerCount = attackers.Count; // 0 : 안전, 1 : 싱글 체크, 2이상 : 더블체크
+        
         if (attackerCount == 0)
         {
             playState = BoardPlayState.Normal;
@@ -312,24 +313,7 @@ public class Board : MonoBehaviour
         bool SquareSafe(Vector2Int pos) => enemyAttackMap[pos.x, pos.y].Count == 0;
 
         // 싱글 체크일때 공격자 경로 차단 / 포획 계산하는 부분
-        HashSet<Vector2Int> mustCover = new();
-        
-        if (attackerCount == 1) 
-        {
-            Pieces attacker = attackers[0];
-            mustCover.Add(attacker.boardPosition);  // 공격자 포획 가능 한 위치 추가
-
-            // 비숍, 룩, 퀸이면 공격 경로 차단 가능한 모든 칸 추가
-            if (attacker is Bishop || attacker is Rook || attacker is Queen)
-            {
-                Vector2Int dir = new(
-                    Math.Sign(attacker.boardPosition.x - kingPos.x),
-                    Math.Sign(attacker.boardPosition.y - kingPos.y));
-
-                for (Vector2Int p = kingPos + dir; p != attacker.boardPosition; p += dir)
-                    mustCover.Add(p);
-            }
-        }
+        HashSet<Vector2Int> mustCover = BuildMustCover(attackerCount, attackers, kingPos);
 
         // 팀 전체 기물 순회
         for (int x = 0; x < 8; x++)
@@ -343,45 +327,26 @@ public class Board : MonoBehaviour
                 }
 
                 bool canMove = false;
-
                 List<Vector2Int> movesForPiece = new();
                 
                 foreach (Vector2Int destination in piece.GetAvailableMoves())
                 {
-                    bool legal = false;
-                    
-                    switch (attackerCount)
+                    if (!PassPreFilter(piece, destination, king, attackerCount, mustCover, SquareSafe))
                     {
-                    // 더블 체크 : 오직 킹만 이동이 가능함, 공격이 둘 이상이면 기물로 막기 불가능
-                    case >= 2:
-                        if (piece != king && SquareSafe(destination) && MoveKeepsKingSafe(piece, destination))
-                            legal = true;
-                        break;
-                    
-                    // 싱글 체크
-                    case 1:
-                        if (piece == king)
-                        {
-                            // 킹 이동이면 안전 칸만 허용
-                            if (SquareSafe(destination) && MoveKeepsKingSafe(piece, destination))
-                                legal = true;
-                        }
-                        else
-                        {
-                            // 나머지 말은 mustConver만 허용
-                            if (mustCover.Contains(destination) && MoveKeepsKingSafe(piece, destination))
-                                legal = true;
-                        }
-                        break;
+                        continue;
                     }
-                    
-                    if(!legal) continue;
+                    if (!MoveKeepsKingSafe(piece, destination))
+                    {
+                        continue;
+                    }
                     
                     movesForPiece.Add(destination);
                     canMove = true;
-                    
-                    if(attackerCount >= 2)
+
+                    if (attackerCount >= 2)
+                    {
                         break;
+                    }
                 }
 
                 if (!canMove) continue;
@@ -395,6 +360,91 @@ public class Board : MonoBehaviour
         {
             playState = BoardPlayState.CheckMate;
         }
+    }
+    
+    // 체스 기물을 들때 상황에 따라서 계산한 이동 가능한 경로를 받는 함수
+    public List<Vector2Int> TryGetCachedMoves(Pieces piece)
+    {
+        if (legalMoveCache.TryGetValue(piece, out var list))
+            return list;
+
+        var moves = ComputeLegalMovesForPiece(piece);
+        legalMoveCache[piece] = moves;
+        return moves;
+    }
+
+    private bool PassPreFilter(Pieces piece, Vector2Int dst, Pieces king, int atkCnt, HashSet<Vector2Int> mustCover, Func<Vector2Int,bool> SquareSafe)
+    {
+        switch (atkCnt)
+        {
+            case >= 2:          // 더블 체크
+                return piece == king && SquareSafe(dst);
+
+            case 1:             // 싱글 체크
+                if (piece == king)
+                {
+                    return SquareSafe(dst);
+                }
+                else
+                {
+                    return mustCover.Contains(dst);
+                }
+
+            default:            // 평상시
+                return !(piece == king && !SquareSafe(dst));
+        }
+    }
+
+    private HashSet<Vector2Int> BuildMustCover(int atkCnt, List<Pieces> attackers, Vector2Int kingPos)
+    {
+        var mustCover = new HashSet<Vector2Int>();
+        if (atkCnt != 1)
+        {
+            return mustCover;
+        }
+
+        Pieces attacker = attackers[0];
+        mustCover.Add(attacker.boardPosition);  // 공격자 포획 가능 한 위치 추가
+
+        // 비숍, 룩, 퀸이면 공격 경로 차단 가능한 모든 칸 추가
+        if (attacker is Bishop || attacker is Rook || attacker is Queen)
+        {
+            Vector2Int dir = new(
+                Math.Sign(attacker.boardPosition.x - kingPos.x),
+                Math.Sign(attacker.boardPosition.y - kingPos.y));
+
+            for (Vector2Int p = kingPos + dir; p != attacker.boardPosition; p += dir)
+                mustCover.Add(p);
+        }
+
+        return mustCover;
+    }
+    
+    private List<Vector2Int> ComputeLegalMovesForPiece(Pieces piece)
+    {
+        TeamColor team = piece.team;
+
+        Vector2Int kingPos = GetKingPosition(team);
+        Pieces king = GetPiece(kingPos);
+        
+        List<Pieces> attackers = GetKingAttackers(team);
+        int attackerCount = attackers.Count;
+        
+        List<Pieces>[,] enemyAttackMap = team == TeamColor.White ? blackAttackMap : whiteAttackMap;
+        bool SquareSafe(Vector2Int pos) => enemyAttackMap[pos.x, pos.y].Count == 0;
+        var mustCover = BuildMustCover(attackerCount, attackers, kingPos);
+        
+        var moves = new List<Vector2Int>();
+        foreach (var dst in piece.GetAvailableMoves())
+        {
+            if (PassPreFilter(piece, dst, king, attackerCount, mustCover, SquareSafe) &&
+                MoveKeepsKingSafe(piece, dst))
+            {
+                moves.Add(dst);
+            }
+        }
+
+        return moves;
     }
     
     // piece를 dst로 가상 이동시킨 뒤에도 아군 킹이 안전한지 여부 확인하는 시뮬레이션 함수 (비용이 비쌈)
@@ -441,17 +491,5 @@ public class Board : MonoBehaviour
                 }
             }
         }
-    }
-    
-    // 체스 기물을 들때 상황에 따라서 계산한 이동 가능한 경로를 받는 함수
-    public List<Vector2Int> TryGetCachedMoves(Pieces piece)
-    {
-        if (playState == BoardPlayState.Normal) 
-            return piece.GetAvailableMoves();
-
-        if (playState == BoardPlayState.Check && legalMoveCache.TryGetValue(piece, out var list))
-            return list;
-
-        return null;
     }
 }
