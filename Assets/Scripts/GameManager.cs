@@ -134,6 +134,9 @@ public class GameManager : MonoBehaviour
                     piece.gameObject.SetActive(false);
                 }
 
+                var ht = room.PlayingData.HeldTarget;
+                Vector2Int htvec = new Vector2Int(ht.Item1, ht.Item2);
+
                 //PlayingData의 데이터에 맞게 동기화 작업
                 for (int x = 0; x < 8; ++x)
                 {
@@ -158,13 +161,14 @@ public class GameManager : MonoBehaviour
 
                         chessBoard.SetPiece(piece, pos);
                         //현재 누가 들고있는건 굳이 렌더링해줄 필요는 없음
-                        if (chessBoard.heldPosition == pos)
+
+                        if (htvec == pos)
                         {
                             piece.gameObject.SetActive(false);
                         }
                     }
                 }
-                Debug.Log($"Current Player Held Pos : {chessBoard.heldPosition}");
+                Debug.Log($"Current Player Held Pos : {htvec}");
                 chessBoard.RebuildAttackMaps();
             }
         }
