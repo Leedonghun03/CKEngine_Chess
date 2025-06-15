@@ -170,6 +170,12 @@ public class GameManager : MonoBehaviour
                 }
                 Debug.Log($"Current Player Held Pos : {htvec}");
                 chessBoard.RebuildAttackMaps();
+                
+                TeamColor movedTeam = room.PlayingData.CurrentTurn == ChessGamePlayingData.Turn.WHITE
+                    ? TeamColor.Black
+                    : TeamColor.White;
+
+                chessBoard.EvaluateCheckmate(movedTeam);
             }
         }
     }

@@ -286,13 +286,13 @@ public class Board : MonoBehaviour
 
         if (playState == BoardPlayState.CheckMate)
         {
-            Debug.Log("게임 오버");
+            
         }
     }
     
     // 팀 전체 기물 중 한 수라도 둘 수 있는 말 목록을 계산한다.
     // 집을 수 있는 말 canGrabPieceSet도 갱신하는 부분
-    private void GetLegalMovesForTeam(TeamColor team)
+    public void GetLegalMovesForTeam(TeamColor team)
     {
         // canGrabPieceSet 초기화
         canGrabPieceSet.Clear();
