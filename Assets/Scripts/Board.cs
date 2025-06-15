@@ -283,6 +283,11 @@ public class Board : MonoBehaviour
         TeamColor nextMovedTeam = movedTeam == TeamColor.White ? TeamColor.Black : TeamColor.White;
         
         GetLegalMovesForTeam(nextMovedTeam);
+
+        if (playState == BoardPlayState.CheckMate)
+        {
+            Debug.Log("게임 오버");
+        }
     }
     
     // 팀 전체 기물 중 한 수라도 둘 수 있는 말 목록을 계산한다.
@@ -355,8 +360,8 @@ public class Board : MonoBehaviour
                 legalMoveCache[piece] = movesForPiece;
             }
         }
-        
-        if (canGrabPieceSet.Count == 0)
+
+        if (attackerCount > 0 && canGrabPieceSet.Count == 0)
         {
             playState = BoardPlayState.CheckMate;
         }
